@@ -117,4 +117,8 @@ f.addEventListener('submit',function(e){e.preventDefault();
  if(!f.n.value.trim()||!f.p.value.trim()){s.textContent='Please add your name and phone number.';return}
  s.textContent='Demo only: nothing was sent. Live, this would reach DAZ Plumbing &amp; Locating and confirm by text.';f.reset()});
 })();
-</script></body></html>
+</script><script type="application/json" id="chat-config">
+{"business": "DAZ Plumbing & Locating", "phone": "(254) 529-3300", "city": "Waxahachie", "trade": "plumbing", "services": ["Leak repair", "Water heaters", "Drains and clogs", "Fixtures and pipes"], "bottom": 88}
+</script>
+<script src="../assets/chat-widget.js" defer></script>
+</body></html>

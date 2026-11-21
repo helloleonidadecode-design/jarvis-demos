@@ -117,4 +117,8 @@ f.addEventListener('submit',function(e){e.preventDefault();
  if(!f.n.value.trim()||!f.p.value.trim()){s.textContent='Please add your name and phone number.';return}
  s.textContent='Demo only: nothing was sent. Live, this would reach Arrington Roofing and confirm by text.';f.reset()});
 })();
-</script></body></html>
+</script><script type="application/json" id="chat-config">
+{"business": "Arrington Roofing", "phone": "(469) 621-9622", "city": "Dallas", "trade": "roofing", "services": ["Roof repair", "Roof replacement", "Storm damage inspection", "Estimates"], "bottom": 88}
+</script>
+<script src="../assets/chat-widget.js" defer></script>
+</body></html>

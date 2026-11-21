@@ -117,4 +117,8 @@ f.addEventListener('submit',function(e){e.preventDefault();
  if(!f.n.value.trim()||!f.p.value.trim()){s.textContent='Please add your name and phone number.';return}
  s.textContent='Demo only: nothing was sent. Live, this would reach John Jones Electric and confirm by text.';f.reset()});
 })();
-</script></body></html>
+</script><script type="application/json" id="chat-config">
+{"business": "John Jones Electric", "phone": "(210) 525-0013", "city": "San Antonio", "trade": "electrical", "services": ["Panel and breaker work", "Lighting and fans", "Outlets and wiring", "Safety inspections"], "bottom": 88}
+</script>
+<script src="../assets/chat-widget.js" defer></script>
+</body></html>
