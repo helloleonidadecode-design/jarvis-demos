@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arrington Roofing | Dallas Roofing (Cinematic Concept)</title>
+<meta name="description" content="Cinematic concept demo of a new website for Arrington Roofing, Dallas, TX. Not the official site.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#0b1424;--panel:#13213a;--accent:#d98a4a;--accent-hover:#e9a066;--accent-muted:#8f5a2f;
+  --text-primary:#f6f1ea;--text-secondary:#c9d2e0;--line:rgba(255,255,255,.16);--ink-on-accent:#0b1424;
+  --disp:'Fraunces',Georgia,serif;--body:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--canvas);color:var(--text-primary);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--ink-on-accent);padding:10px 14px;border-radius:6px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--accent-hover);outline-offset:3px}
+.wrap{width:min(1100px,100% - 32px);margin-inline:auto}
+.demo-bar{background:var(--accent);color:var(--ink-on-accent);font-size:13px;font-weight:600;text-align:center;padding:8px 44px 8px 16px;position:relative;z-index:60}
+.demo-bar button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:inherit;font-size:20px;cursor:pointer;padding:4px 10px}
+header.top{position:fixed;left:0;right:0;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px max(16px,calc((100% - 1100px)/2));transition:background .3s}
+header.top.solid{background:rgba(11,20,36,.92);backdrop-filter:blur(8px)}
+.demo-on header.top{top:var(--bar,36px)}
+.logo{font:700 20px var(--disp);text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav a{text-decoration:none;font-weight:600;font-size:15px;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+nav a:hover{text-decoration:underline}
+.menu{display:none;background:rgba(11,20,36,.7);border:2px solid var(--text-primary);color:var(--text-primary);border-radius:8px;padding:8px 12px;font:600 14px var(--body);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:var(--ink-on-accent);border:2px solid var(--accent);border-radius:10px;padding:13px 24px;font:700 16px var(--body);text-decoration:none;min-height:48px;cursor:pointer}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn.ghost{background:transparent;color:var(--text-primary);border-color:var(--text-primary)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.mono{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-hover)}
+
+/* scroll stage */
+.stage{position:relative;height:420vh}
+.pin{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--canvas)}
+.pin video,.pin .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.still{background:center/cover no-repeat url(assets/poster.jpg);display:none}
+/* 4-layer scrim */
+.scrim{position:absolute;inset:0;pointer-events:none}
+.s1{background:linear-gradient(90deg,rgba(8,16,32,.88) 0%,rgba(8,16,32,.78) 38%,rgba(8,16,32,.25) 72%,rgba(8,16,32,0) 100%)}
+.s2{background:linear-gradient(0deg,rgba(8,16,32,.7) 0%,rgba(8,16,32,0) 38%)}
+.s3{background:linear-gradient(180deg,rgba(8,16,32,.6) 0%,rgba(8,16,32,0) 24%)}
+.s4{background:radial-gradient(120% 90% at 20% 50%,rgba(8,16,32,.35),rgba(8,16,32,0) 70%)}
+.bands{position:absolute;inset:0;display:flex;align-items:center}
+.band{position:absolute;left:max(16px,calc((100% - 1100px)/2));width:min(560px,calc(100% - 32px));opacity:0;transform:translateY(24px);text-shadow:0 2px 18px rgba(0,0,0,.65);will-change:opacity,transform}
+.band h1,.band h2{font:600 clamp(36px,5.6vw,68px)/1.05 var(--disp);letter-spacing:-.015em;margin:10px 0 14px}
+.band p.sub{font-size:clamp(17px,2vw,20px);color:var(--text-primary);max-width:46ch}
+.band .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.progress{position:absolute;right:max(16px,calc((100% - 1100px)/2));bottom:28px;display:flex;gap:8px}
+.progress i{width:34px;height:3px;background:rgba(255,255,255,.3);border-radius:2px;transition:background .2s}
+.progress i.on{background:var(--accent)}
+.ai-note{position:absolute;left:max(16px,calc((100% - 1100px)/2));bottom:20px;font-size:12px;color:var(--text-secondary);max-width:44ch;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font:500 11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary);animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,6px)}}
+
+/* static-hero mode: phones, portrait tablets, coarse portrait, landscape phones, reduced motion */
+.static .stage{height:auto}
+.static .pin{position:relative;height:auto;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 90px}
+.static .pin video{display:none}
+.static .still{display:block}
+.static .bands{position:relative;inset:auto;display:block}
+.static .band{position:relative;left:auto;width:min(560px,calc(100% - 32px));margin-inline:max(16px,calc((100% - 1100px)/2));opacity:1;transform:none;display:none}
+.static .band[data-static="show"]{display:block}
+.static .band[data-final]{display:block;margin-top:28px}
+.static .progress,.static .cue{display:none}
+.static .s1{background:linear-gradient(180deg,rgba(8,16,32,.5),rgba(8,16,32,.82))}
+
+/* below the fold */
+section.block{padding:84px 0}
+section.block h2{font:600 clamp(28px,4vw,44px)/1.1 var(--disp);margin:8px 0 14px}
+.lead{color:var(--text-secondary);max-width:60ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:30px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font:600 21px var(--disp);margin-bottom:6px}.card p{color:var(--text-secondary);font-size:15px}
+.note{font-size:14px;color:var(--text-secondary);margin-top:18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px;counter-reset:s;padding:0}
+.steps li{list-style:none;counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:62px 20px 20px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--ink-on-accent);display:grid;place-items:center;font:700 16px var(--disp)}
+.steps b{display:block;font:600 19px var(--disp);margin-bottom:2px}
+.proof{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:26px;padding:18px 0;border-block:1px solid var(--line)}
+.proof b{font:600 26px var(--disp);display:block}
+form.req{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:14px;max-width:640px}
+form.req label{font-weight:600;font-size:14px;display:grid;gap:6px}
+form.req input,form.req select,form.req textarea{font:inherit;padding:12px;border-radius:10px;border:1.5px solid #8ea0bd;background:var(--canvas);color:var(--text-primary);min-height:46px;width:100%}
+.privacy{font-size:13px;color:var(--text-secondary)}.status{font-weight:600;min-height:1.4em}
+footer{border-top:1px solid var(--line);padding:30px 0 90px;font-size:14px;color:var(--text-secondary)}
+.callbar{display:none}
+
+@media(max-width:860px){
+  .menu{display:inline-block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:rgba(11,20,36,.97);flex-direction:column;gap:0;padding:8px 16px;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}nav li a{display:block;padding:14px 4px}
+  section.block{padding:56px 0}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--accent);padding:10px 16px;gap:10px}
+  .callbar a{flex:1;text-align:center;color:var(--ink-on-accent);font-weight:700;text-decoration:none;padding:12px;border-radius:8px;border:2px solid var(--ink-on-accent)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cue{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body class="demo-on">
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar" id="demobar">Cinematic concept for Arrington Roofing. Not the official site and not live. Ratings and contact details are from public listings (Nov 2026).<button type="button" aria-label="Dismiss demo notice" onclick="document.body.classList.remove('demo-on');this.parentElement.remove()">&times;</button></div>
+<header class="top" id="top"><a class="logo" href="#">Arrington Roofing</a>
+<nav aria-label="Primary"><ul id="nav"><li><a href="#services">Services</a></li><li><a href="#process">How it works</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#request">Estimate</a></li></ul></nav>
+<button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button></header>
+
+<main id="main">
+<div class="stage" id="stage">
+  <div class="pin">
+    <video id="hv" muted playsinline preload="auto" poster="assets/poster.jpg" aria-hidden="true" tabindex="-1"><source src="assets/hero.mp4" type="video/mp4"></video>
+    <div class="still" aria-hidden="true"></div>
+    <div class="scrim s1"></div><div class="scrim s2"></div><div class="scrim s3"></div><div class="scrim s4"></div>
+    <div class="bands">
+      <div class="band" data-in="0" data-out="0.27" data-static="show"><p class="mono">Dallas, TX roofing</p><h1>Dallas roofing, after the storm.</h1><p class="sub">Arrington Roofing is rated 4.9 by 192 Google reviewers.</p></div>
+      <div class="band" data-in="0.30" data-out="0.55"><p class="mono">After hail or wind</p><h2>A roof shows quickly whether it held.</h2><p class="sub">A careful look beats guessing, and it is easier to ask before the next storm.</p></div>
+      <div class="band" data-in="0.58" data-out="0.82"><p class="mono">In writing</p><h2>Tell us what you saw. Get it checked.</h2><p class="sub">Describe the stain, the leak or the missing shingle and request an estimate.</p></div>
+      <div class="band" data-in="0.86" data-out="1.01" data-final="1"><p class="mono">Ready when you are</p><h2>Request your estimate.</h2><p class="sub">One short form, or call and talk to a person.</p><div class="row"><a class="btn" href="#request">Request an estimate</a><a class="btn ghost" href="tel:+12146988443">Call (214) 698-8443</a></div></div>
+    </div>
+    <div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <p class="ai-note">Concept footage: an AI-generated scene, not an Arrington project.</p>
+    <div class="cue" aria-hidden="true">Scroll</div>
+  </div>
+</div>
+
+<section class="block" id="services"><div class="wrap"><p class="mono">Services</p><h2>What Arrington Roofing can help with</h2><p class="lead">Typical roofing work for Dallas. <em>This list is a starting point to confirm with the owner before launch.</em></p>
+<div class="cards"><div class="card"><h3>Roof repair</h3><p>Leaks, missing shingles and flashing problems found and fixed.</p></div><div class="card"><h3>Roof replacement</h3><p>A full tear-off and new roof when repair no longer makes sense.</p></div><div class="card"><h3>Storm damage inspection</h3><p>A close look after hail or wind, with photos you can keep.</p></div><div class="card"><h3>Estimates</h3><p>A written estimate before any work starts.</p></div></div></div></section>
+
+<section class="block" id="process"><div class="wrap"><p class="mono">How it works</p><h2>Three steps, no surprises</h2>
+<ol class="steps"><li><b>Tell us what you see</b>A stain, a leak, a shingle in the yard. A sentence is enough.</li><li><b>We look at the roof</b>Someone from the team inspects it and explains what they find.</li><li><b>You get it in writing</b>A clear estimate. You decide, with no pressure.</li></ol></div></section>
+
+<section class="block" id="reviews"><div class="wrap"><p class="mono">Reputation</p><h2>What the public ratings show</h2><p class="lead">Ratings come from public listings, last checked Nov 2026. Review text is not reproduced here; a live site would show real reviews with permission.</p>
+<div class="proof"><span><b>4.9</b>Google rating</span><span><b>192</b>Google reviews</span><span><b>4.5 (18)</b>Yelp</span></div></div></section>
+
+<section class="block" id="request"><div class="wrap">
+<form class="req" id="reqform" novalidate>
+  <h2 style="margin:0;font-size:28px">Request an estimate</h2>
+  <label>Your name<input name="n" autocomplete="name" required></label>
+  <label>Phone<input name="p" type="tel" autocomplete="tel" required></label>
+  <label>What do you need?<select name="k"><option>Leak or repair</option><option>Full replacement</option><option>Storm damage check</option><option>Not sure yet</option></select></label>
+  <label>Details<textarea name="d" rows="3"></textarea></label>
+  <button class="btn" type="submit">Send request</button>
+  <p class="status" role="status" aria-live="polite"></p>
+  <p class="privacy"><strong>Privacy:</strong> Your name, phone and request would be used only to answer you and would be shared with Arrington Roofing, never sold. This demo stores and sends nothing.</p>
+</form></div></section>
+</main>
+
+<footer><div class="wrap"><p>Concept demo, not affiliated with Arrington Roofing. Ratings as listed publicly in Nov 2026. Services and service area to confirm with the business. Hero footage is AI-generated.</p></div></footer>
+<div class="callbar"><a href="tel:+12146988443">Call</a><a href="#request">Estimate</a></div>
+
+<script>
+(function(){
+  var root=document.documentElement, stage=document.getElementById('stage'), v=document.getElementById('hv'),
+      bands=[].slice.call(document.querySelectorAll('.band')), dots=[].slice.call(document.querySelectorAll('.progress i')),
+      top=document.getElementById('top');
+  /* five static-hero gates; every one stays live in both directions */
+  var Q=['(max-width:720px)','(max-width:1024px) and (orientation:portrait)','(pointer:coarse) and (orientation:portrait)','(orientation:landscape) and (max-height:560px)','(prefers-reduced-motion:reduce)'].map(function(q){return window.matchMedia(q)});
+  var videoBad=false, ticking=false, dur=0;
+  function isStatic(){return videoBad||Q.some(function(m){return m.matches})}
+  function apply(){
+    var s=isStatic(); root.classList.toggle('static',s);
+    if(s){bands.forEach(function(b){b.style.opacity='';b.style.transform=''});try{v.pause()}catch(e){}}
+    else{update()}
+  }
+  Q.forEach(function(m){ if(m.addEventListener)m.addEventListener('change',apply); else m.addListener(apply)});
+  function bar(){var d=document.getElementById('demobar');root.style.setProperty('--bar',(d?d.offsetHeight:0)+'px')}
+  bar(); window.addEventListener('resize',bar);
+  function ease(t){return t<0?0:t>1?1:t*t*(3-2*t)}
+  function update(){
+    ticking=false;
+    top.classList.toggle('solid',window.scrollY>window.innerHeight*0.2);
+    var bd=document.getElementById('demobar'); top.style.top=Math.max(0,(bd?bd.offsetHeight:0)-window.scrollY)+'px';
+    if(isStatic())return;
+    var r=stage.getBoundingClientRect(), total=stage.offsetHeight-window.innerHeight;
+    var p=Math.min(1,Math.max(0,-r.top/total));
+    if(dur&&v.readyState>=2){var t=p*(dur-0.05); if(Math.abs(v.currentTime-t)>0.03)v.currentTime=t}
+    var active=-1;
+    bands.forEach(function(b,i){
+      var a=+b.dataset.in, z=+b.dataset.out, f=0.04;
+      var o=ease((p-a)/f)*(1-ease((p-(z-f))/f)); if(i===0&&p<z-f)o=Math.max(o,p<0.02?1:o);
+      b.style.opacity=o.toFixed(3); b.style.transform='translateY('+((1-o)*24).toFixed(1)+'px)';
+      b.style.pointerEvents=o>0.6?'auto':'none'; if(o>0.5)active=i;
+    });
+    dots.forEach(function(d,i){d.classList.toggle('on',i===active)});
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
+  window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll);
+  v.addEventListener('loadedmetadata',function(){dur=v.duration;update()});
+  v.addEventListener('error',function(){videoBad=true;apply()});
+  v.querySelector('source').addEventListener('error',function(){videoBad=true;apply()});
+  apply();
+
+  /* nav */
+  var b=document.querySelector('.menu'), n=document.getElementById('nav');
+  function close(){n.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){close();b.focus()}});
+  /* form (demo) */
+  var f=document.getElementById('reqform'), s=f.querySelector('.status');
+  f.addEventListener('submit',function(e){e.preventDefault();
+    if(!f.n.value.trim()||!f.p.value.trim()){s.textContent='Please add your name and phone number.';return}
+    s.textContent='Demo only: nothing was sent. Live, this would reach Arrington Roofing and confirm by text.';f.reset()});
+})();
+</script>
+</body>
+</html>
