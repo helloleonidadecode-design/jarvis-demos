@@ -1,297 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Professor Plumb | Dallas Plumbing, 24 Hours (Concept Demo)</title>
-<meta name="description" content="Concept site for Professor Plumb LLC, a Dallas residential plumber (TX license M-40862) offering 24-hour emergency service, drain cleaning, water heaters and slab leaks.">
-<meta name="robots" content="noindex, nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=IBM+Plex+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#fffdf6; --rule:#cfe0f0; --margin:#e7a5a0; --ink:#13294b; --ink-2:#2a4775; --muted:#55627a;
-  --red:#d6452f; --chalk:#21382f; --line:#e5e0cf; --pipe:#2b7bbd;
-  --max:1140px; --r:14px;
-  --serif:"Young Serif", Georgia, serif; --sans:"IBM Plex Sans", system-ui, sans-serif; --hand:"Caveat", cursive;
+<!doctype html>
+<html lang="en" data-l="E"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Professor Plumb | Dallas Plumbing (Concept Demo)</title>
+<meta name="description" content="Concept demo of a new website for Professor Plumb, Dallas, TX. Not the official site.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#fffdf6;--ink:#13294b;--acc:#b93824;--accink:#ffffff;--surf:#f3efe0;--mute:#55627a;--acc-text:#b93824;--line:rgba(0,0,0,.14);--field:#6b7280;--disp:'Young Serif',Georgia,serif;--body:'IBM Plex Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:var(--disp);line-height:1.08;letter-spacing:-.01em}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--acc);color:var(--accink);padding:10px 14px;z-index:99;border-radius:6px}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.demo-bar{background:var(--acc);color:var(--accink);font-size:13px;font-weight:600;text-align:center;padding:8px 44px 8px 16px;position:relative}
+.demo-bar button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:inherit;font-size:20px;cursor:pointer;padding:4px 10px}
+header.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{font:800 20px/1.1 var(--disp);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav a{text-decoration:none;font-weight:600;font-size:15px}nav a:hover{text-decoration:underline}
+.menu{display:none;background:none;border:2px solid var(--ink);color:var(--ink);border-radius:8px;padding:8px 12px;font:600 14px var(--body);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--acc);color:var(--accink);border:2px solid var(--acc);border-radius:10px;padding:13px 22px;font:700 16px var(--body);text-decoration:none;cursor:pointer;min-height:48px}
+.btn:hover{filter:brightness(1.08)}.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.eyebrow{font:700 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--acc-text)}
+.stars{color:var(--acc-text);letter-spacing:2px}
+section{padding:72px 0}
+section h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
+.lead{color:var(--mute);max-width:60ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero h1{font-size:clamp(36px,6.2vw,68px);margin:12px 0 16px}
+.hero p.sub{font-size:19px;color:var(--mute);max-width:56ch}
+.rate{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:22px}
+.rate b{font:800 48px/1 var(--disp)}.rate span{color:var(--mute);font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:28px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:21px;margin-bottom:6px}.card p{color:var(--mute);font-size:15px}
+.note{font-size:14px;color:var(--mute);margin-top:18px}
+.steps{counter-reset:s;display:grid;gap:14px;margin-top:26px;max-width:720px}
+.steps li{list-style:none;counter-increment:s;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px 18px 66px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--acc);color:var(--accink);display:grid;place-items:center;font:800 16px var(--disp)}
+.steps b{display:block;font-family:var(--disp);font-size:19px}
+form.req{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;gap:14px}
+form.req label{font-weight:600;font-size:14px;display:grid;gap:6px}
+form.req input,form.req select,form.req textarea{font:inherit;padding:12px;border-radius:10px;border:1.5px solid var(--field);background:var(--bg);color:var(--ink);min-height:46px;width:100%}
+.privacy{font-size:13px;color:var(--mute)}.status{font-weight:600;min-height:1.4em}
+footer{border-top:1px solid var(--line);padding:30px 0 90px;font-size:14px;color:var(--mute)}
+.callbar{display:none}
+.proof{display:flex;flex-wrap:wrap;gap:10px 28px;padding:18px 0;border-block:1px solid var(--line);margin-top:34px;font-size:15px}
+.proof b{font-family:var(--disp);font-size:20px}
+/* A split */
+[data-l=A] .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-block:64px}
+[data-l=A] .ratecard{background:var(--acc);color:var(--accink);border-radius:22px;padding:34px;text-align:center}
+[data-l=A] .ratecard b{display:block;font:800 88px/1 var(--disp)}[data-l=A] .ratecard .stars{color:inherit}
+/* B bold band */
+[data-l=B] .hero{background:var(--surf);position:relative;overflow:hidden}
+[data-l=B] .hero .wrap{padding-block:72px;position:relative}
+[data-l=B] .bignum{position:absolute;right:-10px;top:-30px;font:800 clamp(180px,32vw,420px)/1 var(--disp);color:var(--acc);opacity:.16;pointer-events:none}
+[data-l=B] .hero h1{font-size:clamp(44px,9vw,110px);text-transform:uppercase}
+/* C editorial */
+[data-l=C] .hero .wrap{max-width:820px;text-align:center;padding-block:84px}
+[data-l=C] .hero p.sub,[data-l=C] .lead{margin-inline:auto}
+[data-l=C] .cta-row,[data-l=C] .rate{justify-content:center}
+[data-l=C] .hero h1{font-weight:400;font-style:normal}
+[data-l=C] .hero .rule{width:64px;height:3px;background:var(--acc);margin:22px auto}
+/* D sidebar */
+[data-l=D] .layout{display:grid;grid-template-columns:300px 1fr;gap:44px;padding-block:48px;align-items:start}
+[data-l=D] aside{position:sticky;top:88px;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:24px}
+[data-l=D] aside .big{font:800 56px/1 var(--disp);color:var(--acc-text)}
+[data-l=D] aside .btn{width:100%;margin-top:14px}
+[data-l=D] .main section{padding:36px 0}[data-l=D] .main section:first-child{padding-top:0}
+/* E ticket */
+[data-l=E] .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;padding-block:60px}
+[data-l=E] form.req{border:2px dashed var(--acc);box-shadow:8px 8px 0 var(--acc)}
+/* F process-first */
+[data-l=F] .hero .wrap{padding-block:56px}
+[data-l=F] .hero h1{max-width:18ch}
+[data-l=F] .steps{max-width:none;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+[data-l=F] .steps li{padding:62px 20px 20px}[data-l=F] .steps li::before{left:20px;top:16px}
+@media(max-width:860px){
+ [data-l=A] .hero .wrap,[data-l=E] .hero .wrap,[data-l=D] .layout{grid-template-columns:1fr}
+ [data-l=D] aside{position:static}
+ .menu{display:inline-block}nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;gap:0;border-bottom:1px solid var(--line);padding:8px 16px}
+ nav ul.open{display:flex}nav li a{display:block;padding:14px 4px}
+ header.top .wrap{position:relative}
+ .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--acc);padding:10px 16px;gap:10px}
+ .callbar a{flex:1;text-align:center;color:var(--accink);font-weight:700;text-decoration:none;padding:12px;border-radius:8px;border:2px solid var(--accink)}
+ section{padding:52px 0}
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
-.skip:focus{left:12px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.demo-bar{background:var(--ink);color:#e8eef8;font-size:13px;text-align:center;padding:8px 44px 8px 16px;position:relative}
-.demo-bar button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;color:#e8eef8;font-size:18px;cursor:pointer;padding:4px 8px}
-.emerg{background:var(--red);color:#fff;font-weight:600;font-size:15px}
-.emerg .wrap{display:flex;justify-content:center;gap:10px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap;text-align:center}
-.emerg a{text-decoration:underline;text-underline-offset:3px}
-header.site{background:var(--paper);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:50}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo .cap{width:44px;height:44px}
-.logo b{font-family:var(--serif);font-size:23px;font-weight:400;line-height:1}
-.logo small{display:block;font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-nav ul{list-style:none;display:flex;gap:26px;align-items:center}
-nav a{text-decoration:none;font-weight:500}
-nav a:hover{color:var(--red)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font:600 15px var(--sans);text-decoration:none;border:2px solid var(--ink);cursor:pointer;transition:background .15s,color .15s}
-.btn-red{background:var(--red);border-color:var(--red);color:#fff}
-.btn-red:hover{background:#b93824}
-.btn-ink{background:var(--ink);color:#fff}
-.btn-ghost{background:transparent}
-.btn-ghost:hover{background:var(--ink);color:#fff}
-.menu-toggle{display:none;border:2px solid var(--ink);background:none;border-radius:10px;padding:8px 12px;font:600 14px var(--sans);cursor:pointer}
-/* hero: notebook page */
-.hero{position:relative;padding:70px 0 80px;
-  background:
-    linear-gradient(90deg,transparent 0 88px,var(--margin) 88px 90px,transparent 90px),
-    repeating-linear-gradient(transparent 0 35px,var(--rule) 35px 36px);
-}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-left:96px}
-.tag{font-family:var(--hand);color:var(--red);font-size:28px;transform:rotate(-2deg);display:inline-block}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.6vw,72px);line-height:1.04;margin:8px 0 22px}
-.hero h1 u{text-decoration:none;background:linear-gradient(transparent 70%,#ffd9cf 70%)}
-.hero .lead{font-size:19px;color:var(--muted);max-width:520px}
-.ctas{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
-.license{margin-top:26px;font-size:14px;color:var(--muted)}
-.license b{color:var(--ink)}
-.board{background:var(--chalk);color:#eef3ee;border-radius:18px;padding:30px;border:10px solid #8a6a43;box-shadow:0 18px 40px rgba(19,41,75,.18);position:relative}
-.board h2{font-family:var(--hand);font-size:34px;font-weight:600;margin-bottom:8px}
-.board ol{list-style:none;counter-reset:s;display:grid;gap:14px}
-.board li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:10px;font-size:16px}
-.board li::before{content:counter(s);font-family:var(--hand);font-size:28px;line-height:1;color:#ffd36b}
-.board .chalk-line{height:2px;background:rgba(255,255,255,.25);margin:18px 0}
-.board p{font-size:14px;opacity:.85}
-/* report card */
-.report{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);background:#fff}
-.report .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.grade{padding:26px 20px;border-right:1px dashed var(--line);display:flex;gap:14px;align-items:center}
-.grade:last-child{border-right:0}
-.grade .A{font-family:var(--serif);font-size:44px;color:var(--red);line-height:1;border:2px solid var(--red);border-radius:50%;width:62px;height:62px;display:grid;place-items:center;flex:none;transform:rotate(-6deg)}
-.grade span{font-size:14px;color:var(--muted)}
-.grade b{display:block;color:var(--ink);font-size:16px}
-/* catalog */
-section{padding:92px 0}
-.head{max-width:680px;margin-bottom:42px}
-h2.t{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.8vw,48px);line-height:1.1}
-.head p{color:var(--muted);margin-top:12px}
-.catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;background:#fff}
-.course{padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.course:nth-child(3n){border-right:0}
-.course .code{font-size:12px;letter-spacing:.12em;color:var(--red);font-weight:600}
-.course h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:6px 0}
-.course p{font-size:15px;color:var(--muted)}
-/* ask the plumber */
-.ask{background:#f3f7fb}
-.ask-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
-details{background:#fff;border:1.5px solid var(--rule);border-radius:12px;margin-bottom:12px}
-summary{cursor:pointer;padding:18px 20px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--serif);font-size:24px;line-height:1;color:var(--red)}
-details[open] summary::after{content:"–"}
-details p{padding:0 20px 18px;color:var(--muted)}
-.note-hand{font-family:var(--hand);font-size:24px;color:var(--ink-2);margin-top:18px}
-/* booking */
-.book{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.slip{background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:30px;position:relative}
-.slip::before{content:"SERVICE REQUEST";position:absolute;top:-13px;left:22px;background:var(--paper);padding:0 10px;font-size:12px;letter-spacing:.14em;font-weight:600}
-.urg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
-.urg input{position:absolute;opacity:0}
-.urg label{display:block;text-align:center;border:1.5px solid var(--line);border-radius:10px;padding:12px 6px;font-weight:600;font-size:14px;cursor:pointer}
-.urg input:checked+label{border-color:var(--red);background:#fff1ee;color:var(--red)}
-.urg input:focus-visible+label{outline:3px solid var(--red);outline-offset:2px}
-.urg div{position:relative}
-.field{display:grid;gap:6px;margin-bottom:14px}
-.field label{font-weight:600;font-size:14px}
-.field input,.field select,.field textarea{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ink);outline:none}
-.privacy{font-size:13px;color:var(--muted);margin-top:14px}
-.status{font-weight:600;min-height:24px;margin-top:10px}
-.why li{list-style:none;padding:14px 0;border-bottom:1px dashed var(--line);display:flex;gap:12px}
-.why li::before{content:"✓";color:var(--red);font-weight:700}
-.bigcall{display:inline-block;font-family:var(--serif);font-size:38px;color:var(--red);text-decoration:none;margin:10px 0 6px}
-footer{background:var(--ink);color:#c8d3e6;padding:44px 0;font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer a{color:#fff}
-@media (max-width:960px){
-  .hero .wrap,.ask-grid,.book{grid-template-columns:1fr}
-  .hero .wrap{padding-left:24px}
-  .hero{background:repeating-linear-gradient(transparent 0 35px,var(--rule) 35px 36px)}
-  .catalog{grid-template-columns:1fr 1fr}
-  .course:nth-child(3n){border-right:1px solid var(--line)}
-  .course:nth-child(2n){border-right:0}
-  .report .wrap{grid-template-columns:1fr 1fr}
-  .menu-toggle{display:block}
-  nav ul{display:none;position:absolute;top:74px;left:0;right:0;background:var(--paper);border-bottom:2px solid var(--ink);flex-direction:column;align-items:flex-start;padding:18px 24px 24px}
-  nav ul.open{display:flex}
-}
-@media (max-width:560px){
-  body{font-size:16px}
-  section{padding:72px 0}
-  .catalog,.report .wrap{grid-template-columns:1fr}
-  .course{border-right:0!important}
-  .grade{border-right:0;border-bottom:1px dashed var(--line)}
-  .urg{grid-template-columns:1fr}
-  .board{padding:22px;border-width:8px}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
-</head>
-<body>
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style></head>
+<body data-l="E">
 <a class="skip" href="#main">Skip to content</a>
-<div class="demo-bar">Concept demo for Professor Plumb LLC. Not the official site and not live. Facts from professorplumbtexas.com and public listings (Nov 2026).
-  <button type="button" aria-label="Dismiss demo notice" onclick="this.parentElement.remove()">×</button></div>
-<div class="emerg"><div class="wrap"><span>Burst pipe or no hot water? Emergency plumbing service 24 hours a day.</span><a href="tel:+19723626485">Call (972) 362-6485</a></div></div>
-
-<header class="site">
-  <div class="wrap">
-    <a class="logo" href="#top">
-      <svg class="cap" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 18 24 9l20 9-20 9z" fill="#13294b"/><path d="M12 22v9c0 3 6 6 12 6s12-3 12-6v-9l-12 5z" fill="#2a4775"/><path d="M42 19v11" stroke="#d6452f" stroke-width="2.5"/><circle cx="42" cy="32" r="2.5" fill="#d6452f"/></svg>
-      <span><b>Professor Plumb</b><small>Residential plumbing · Dallas</small></span>
-    </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="navList">Menu</button>
-    <nav aria-label="Primary">
-      <ul id="navList">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#ask">Ask the Plumber</a></li>
-        <li><a href="#book">Book</a></li>
-        <li><a class="btn btn-ink" href="tel:+19723626485">(972) 362-6485</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-  <section class="hero" id="top" aria-labelledby="h1">
-    <div class="wrap">
-      <div>
-        <span class="tag">Lesson one:</span>
-        <h1 id="h1">Taking the <u>mystery</u> out of plumbing.</h1>
-        <p class="lead">You see the clues, the diagnosis and a clear upfront cost before any work starts. Leaky pipe, clogged drain or that touch-free faucet you've been after: Professor Plumb can fix, repair or replace it.</p>
-        <div class="ctas">
-          <a class="btn btn-red" href="#book">Book a visit</a>
-          <a class="btn btn-ghost" href="tel:+19723626485">Call 24/7: (972) 362-6485</a>
-        </div>
-        <p class="license">Texas plumbing license <b>M-40862</b> · Residential plumbing experts</p>
-      </div>
-      <aside class="board" aria-label="How a visit works">
-        <h2>Today's lesson plan</h2>
-        <ol>
-          <li><span>We look for the clues and find the actual cause.</span></li>
-          <li><span>You get a plain explanation of the work required.</span></li>
-          <li><span>You see a clear upfront cost before anything starts.</span></li>
-          <li><span>We fix, repair or replace it, and you know what was done.</span></li>
-        </ol>
-        <div class="chalk-line"></div>
-        <p>No surprise line items. That's the whole syllabus.</p>
-      </aside>
-    </div>
-  </section>
-
-  <div class="report" aria-label="Customer ratings">
-    <div class="wrap">
-      <div class="grade"><span class="A">A+</span><span><b>5.0 on HomeAdvisor</b>186 reviews</span></div>
-      <div class="grade"><span class="A">A+</span><span><b>5.0 on Yelp</b>81 reviews</span></div>
-      <div class="grade"><span class="A" style="font-size:26px">24h</span><span><b>Emergency service</b>Day or night</span></div>
-      <div class="grade"><span class="A" style="font-size:22px">TX</span><span><b>Licensed</b>M-40862</span></div>
-    </div>
-  </div>
-
-  <section id="services" aria-labelledby="svc-h">
-    <div class="wrap">
-      <div class="head">
-        <h2 class="t" id="svc-h">The course catalog</h2>
-        <p>Everything Professor Plumb repairs and replaces in your home. "We do it all."</p>
-      </div>
-      <div class="catalog">
-        <article class="course"><span class="code">PLB 101</span><h3>Drain cleaning</h3><p>Clogged drains cleared, with jetting service available for stubborn lines.</p></article>
-        <article class="course"><span class="code">PLB 110</span><h3>Water heaters</h3><p>Tank and tankless repair and replacement.</p></article>
-        <article class="course"><span class="code">PLB 120</span><h3>Slab leaks &amp; leaking pipes</h3><p>Finding and fixing leaks, including under the slab.</p></article>
-        <article class="course"><span class="code">PLB 130</span><h3>Water lines</h3><p>Water line repair and replacement.</p></article>
-        <article class="course"><span class="code">PLB 140</span><h3>Drain lines &amp; sewer</h3><p>Drain line repair and replacement, plus help with city sewer-line problems.</p></article>
-        <article class="course"><span class="code">PLB 150</span><h3>Gas piping</h3><p>Gas service repair and replacement.</p></article>
-        <article class="course"><span class="code">PLB 160</span><h3>Toilets</h3><p>Toilet repair and replacement.</p></article>
-        <article class="course"><span class="code">PLB 170</span><h3>Faucets</h3><p>Faucet repair and replacement, including touch-free upgrades.</p></article>
-        <article class="course"><span class="code">PLB 180</span><h3>Garbage disposals</h3><p>Disposal repair and replacement.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="ask" id="ask" aria-labelledby="ask-h">
-    <div class="wrap ask-grid">
-      <div>
-        <h2 class="t" id="ask-h">Ask the Plumber</h2>
-        <p style="color:var(--muted);margin-top:12px">Professor Plumb's long-running Q&amp;A series, now searchable on the homepage so homeowners can fix the small stuff and call for the rest.</p>
-        <p class="note-hand">Office hours: 24/7 →</p>
-      </div>
-      <div>
-        <details><summary>What causes a running faucet?</summary><p>Usually a worn washer, O-ring or cartridge inside the handle. Shut off the supply valves under the sink before opening it up. If the drip continues after replacing the part, the valve seat may be worn and needs a professional.</p></details>
-        <details><summary>How do I get hair out of my sink's drain?</summary><p>Remove the stopper and pull hair out with a plastic drain tool. Avoid chemical drain cleaners, which can damage older pipes. If water still drains slowly, the clog is further down the line and needs cleaning.</p></details>
-        <details><summary>My water heater is leaking. What first?</summary><p>Turn off the water supply to the heater and its power or gas, then call. A leak from the tank itself usually means replacement. Leaks at fittings can often be repaired.</p></details>
-        <details><summary>Should I go tankless?</summary><p>Tankless units give endless hot water and save space, but cost more up front. Professor Plumb installs both tank and tankless and can compare them for your home.</p></details>
-        <p style="font-size:13px;color:var(--muted)">Demo note: answers are general guidance written for this concept. They would be replaced with Professor Plumb's own published answers.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="book" aria-labelledby="book-h">
-    <div class="wrap book">
-      <div>
-        <h2 class="t" id="book-h">Book a visit</h2>
-        <p style="color:var(--muted);margin-top:12px">For flooding, gas smells or no water at all, skip the form and call:</p>
-        <a class="bigcall" href="tel:+19723626485">(972) 362-6485</a>
-        <ul class="why">
-          <li>Clear upfront cost before work starts</li>
-          <li>Emergency plumbing service 24 hours a day</li>
-          <li>Licensed Texas plumber, M-40862</li>
-          <li>Rated 5.0 on HomeAdvisor and Yelp</li>
-        </ul>
-      </div>
-      <form class="slip" id="reqForm" novalidate>
-        <fieldset style="border:0">
-          <legend class="field" style="font-weight:600;font-size:14px;margin-bottom:8px">How urgent is it?</legend>
-          <div class="urg">
-            <div><input type="radio" name="urg" id="u1" value="Emergency"><label for="u1">Emergency</label></div>
-            <div><input type="radio" name="urg" id="u2" value="This week" checked><label for="u2">This week</label></div>
-            <div><input type="radio" name="urg" id="u3" value="Flexible"><label for="u3">Flexible</label></div>
-          </div>
-        </fieldset>
-        <div class="field"><label for="issue">What's going on?</label>
-          <select id="issue" name="issue" required><option value="">Choose…</option><option>Clogged drain</option><option>Water heater</option><option>Leak / slab leak</option><option>Toilet or faucet</option><option>Gas line</option><option>Something else</option></select></div>
-        <div class="field"><label for="nm">Name</label><input id="nm" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="tel">Phone</label><input id="tel" name="phone" type="tel" autocomplete="tel" required></div>
-        <div class="field"><label for="zip">ZIP code</label><input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" required></div>
-        <button class="btn btn-red" type="submit" style="width:100%;justify-content:center">Send request</button>
-        <p class="status" id="status" role="status"></p>
-        <p class="privacy"><strong>Privacy:</strong> We use your name, phone and ZIP only to schedule your plumbing visit. They go to Professor Plumb LLC and are never sold. This demo stores and sends nothing.</p>
-      </form>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>Professor Plumb LLC · Dallas, TX · License M-40862 · <a href="tel:+19723626485">(972) 362-6485</a></span>
-    <span>Concept demo, not affiliated with Professor Plumb LLC.</span>
-  </div>
-</footer>
-
+<div class="demo-bar">Concept demo for Professor Plumb. Not the official site and not live. Ratings and contact details are from public listings (Nov 2026).<button type="button" aria-label="Dismiss demo notice" onclick="this.parentElement.remove()">&times;</button></div>
+<header class="top"><div class="wrap"><a class="logo" href="#">Professor Plumb</a><nav aria-label="Primary"><ul id="nav"><li><a href="#services">Services</a></li><li><a href="#process">How it works</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></nav><button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button></div></header>
+<main id="main"><section class="hero"><div class="wrap"><div><p class="eyebrow">Dallas, TX plumbing</p><h1>Dallas plumbing with a 5.0 on HomeAdvisor and Yelp.</h1><p class="sub">For flooding or no water, call now. Otherwise, request an estimate.</p><div class="cta-row"><a class="btn" href="#request">Request an estimate</a> <a class="btn ghost" href="tel:+19723626485">Call (972) 362-6485</a></div><div class="rate"><b>5.0</b><span><span class="stars" aria-hidden="true">★★★★★</span> 7 Google reviews, as listed Nov 2026. Also rated HomeAdvisor 5.0 (186); Yelp 5.0 (81).</span></div></div><form class="req" id="request" novalidate>
+  <h2 style="font-size:26px">Request an estimate</h2>
+  <label>Your name<input name="n" autocomplete="name" required></label>
+  <label>Phone<input name="p" type="tel" autocomplete="tel" required></label>
+  <label>What do you need?<select name="k"><option>Leak or burst pipe</option><option>Water heater</option><option>Drain or clog</option><option>Something else</option></select></label>
+  <label>Details<textarea name="d" rows="3"></textarea></label>
+  <button class="btn" type="submit">Send request</button>
+  <p class="status" role="status" aria-live="polite"></p>
+  <p class="privacy"><strong>Privacy:</strong> Your name, phone and request would be used only to answer you and would be shared with Professor Plumb, never sold. This demo stores and sends nothing.</p>
+</form></div></section><section id="services"><div class="wrap"><p class="eyebrow">Services</p><h2>What Professor Plumb can help with</h2><p class="lead">Typical plumbing work for Dallas. <em>The list is a starting point to confirm with the owner before launch.</em></p><div class="cards"><div class="card"><h3>Leak repair</h3><p>Finding and fixing the leak before it reaches the ceiling.</p></div><div class="card"><h3>Water heaters</h3><p>Repair or replacement, tank or tankless.</p></div><div class="card"><h3>Drains and clogs</h3><p>Slow drains, backups and stubborn clogs.</p></div><div class="card"><h3>Fixtures and pipes</h3><p>Faucets, toilets, shutoffs and pipe work.</p></div></div></div></section><section id="process"><div class="wrap"><p class="eyebrow">How it works</p><h2>Three steps, no surprises</h2><ol class="steps" style="padding:0"><li><b>Tell us what is happening</b>Where the water is and how bad it is.</li><li><b>A plumber calls you back</b>You get a real person and a plan for the visit.</li><li><b>Fixed and explained</b>You see what was wrong and what it costs before work starts.</li></ol></div></section><section id="reviews"><div class="wrap"><p class="eyebrow">Reputation</p><h2>What the public ratings show</h2><p class="lead">Ratings come from public listings, last checked Nov 2026. Review text is not reproduced here; the live site would embed real reviews with permission.</p><div class="proof"><span><b>5.0</b> Google rating</span><span><b>7</b> Google reviews</span><span><b>HomeAdvisor 5.0 (186); Yelp 5.0 (81)</b></span></div></div></section><section id="contact"><div class="wrap"><p class="eyebrow">Contact</p><h2>Talk to Professor Plumb</h2><p><a href="tel:+19723626485">(972) 362-6485</a></p><p class="note">Serving Dallas, TX and nearby. Exact service area to confirm.</p></div></section></main>
+<footer><div class="wrap"><p>Concept demo, not affiliated with Professor Plumb. Ratings as listed publicly in Nov 2026. Services and service area to confirm with the business.</p></div></footer>
+<div class="callbar"><a href=tel:+19723626485>Call</a><a href="#request">Estimate</a></div>
 <script>
-(function(){
-  var t=document.querySelector('.menu-toggle'),l=document.getElementById('navList');
-  t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o)});
-  l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');t.setAttribute('aria-expanded','false')}});
-  var f=document.getElementById('reqForm'),st=document.getElementById('status');
-  f.addEventListener('submit',function(e){e.preventDefault();
-    var bad=[].slice.call(f.querySelectorAll('[required]')).filter(function(x){return !x.value.trim()||(x.pattern&&!new RegExp('^'+x.pattern+'$').test(x.value))});
-    if(bad.length){st.textContent='Please complete: '+bad.map(function(b){return f.querySelector('label[for='+b.id+']').textContent}).join(', ');bad[0].focus();return}
-    var u=f.querySelector('input[name=urg]:checked').value;
-    st.textContent=u==='Emergency'?'For emergencies, please call (972) 362-6485 now. (Demo: nothing was sent.)':'Demo only: nothing was sent. Live, this would text the office and confirm by SMS.';});
+(function(){var b=document.querySelector('.menu'),n=document.getElementById('nav');
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus()}});
+var f=document.getElementById('request'),s=f.querySelector('.status');
+f.addEventListener('submit',function(e){e.preventDefault();
+ if(!f.n.value.trim()||!f.p.value.trim()){s.textContent='Please add your name and phone number.';return}
+ s.textContent='Demo only: nothing was sent. Live, this would reach Professor Plumb and confirm by text.';f.reset()});
 })();
-</script>
-</body>
-</html>
+</script></body></html>

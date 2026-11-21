@@ -1,426 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arrington Roofing | Dallas Roofing Since 1983 (Concept Demo)</title>
-<meta name="description" content="Concept redesign for Arrington Roofing: family-owned Dallas commercial and residential roofing contractor since 1983. GAF Master Elite, BBB A+, 10-year labor warranty.">
-<meta name="robots" content="noindex, nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!doctype html>
+<html lang="en" data-l="E"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arrington Roofing | Dallas Roofing (Concept Demo)</title>
+<meta name="description" content="Concept demo of a new website for Arrington Roofing, Dallas, TX. Not the official site.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0f1b2d; --ink-2:#1b2b44; --paper:#f6f3ee; --line:#d9d2c5; --muted:#5d6675;
-  --copper:#b8642e; --copper-2:#d98444; --white:#fff; --ok:#2f7d4f;
-  --r:14px; --max:1180px;
-  --serif:"Fraunces", Georgia, serif; --sans:"Inter", system-ui, sans-serif;
+<style>:root{--bg:#1b2a49;--ink:#ffffff;--acc:#c8793a;--accink:#0b1424;--surf:#243859;--mute:#c5cde0;--acc-text:#ffffff;--line:rgba(255,255,255,.18);--field:#9fb0c8;--disp:'Fraunces',Georgia,serif;--body:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:var(--disp);line-height:1.08;letter-spacing:-.01em}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--acc);color:var(--accink);padding:10px 14px;z-index:99;border-radius:6px}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.demo-bar{background:var(--acc);color:var(--accink);font-size:13px;font-weight:600;text-align:center;padding:8px 44px 8px 16px;position:relative}
+.demo-bar button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:inherit;font-size:20px;cursor:pointer;padding:4px 10px}
+header.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{font:800 20px/1.1 var(--disp);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav a{text-decoration:none;font-weight:600;font-size:15px}nav a:hover{text-decoration:underline}
+.menu{display:none;background:none;border:2px solid var(--ink);color:var(--ink);border-radius:8px;padding:8px 12px;font:600 14px var(--body);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--acc);color:var(--accink);border:2px solid var(--acc);border-radius:10px;padding:13px 22px;font:700 16px var(--body);text-decoration:none;cursor:pointer;min-height:48px}
+.btn:hover{filter:brightness(1.08)}.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.eyebrow{font:700 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--acc-text)}
+.stars{color:var(--acc-text);letter-spacing:2px}
+section{padding:72px 0}
+section h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
+.lead{color:var(--mute);max-width:60ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero h1{font-size:clamp(36px,6.2vw,68px);margin:12px 0 16px}
+.hero p.sub{font-size:19px;color:var(--mute);max-width:56ch}
+.rate{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:22px}
+.rate b{font:800 48px/1 var(--disp)}.rate span{color:var(--mute);font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:28px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:21px;margin-bottom:6px}.card p{color:var(--mute);font-size:15px}
+.note{font-size:14px;color:var(--mute);margin-top:18px}
+.steps{counter-reset:s;display:grid;gap:14px;margin-top:26px;max-width:720px}
+.steps li{list-style:none;counter-increment:s;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px 18px 66px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--acc);color:var(--accink);display:grid;place-items:center;font:800 16px var(--disp)}
+.steps b{display:block;font-family:var(--disp);font-size:19px}
+form.req{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;gap:14px}
+form.req label{font-weight:600;font-size:14px;display:grid;gap:6px}
+form.req input,form.req select,form.req textarea{font:inherit;padding:12px;border-radius:10px;border:1.5px solid var(--field);background:var(--bg);color:var(--ink);min-height:46px;width:100%}
+.privacy{font-size:13px;color:var(--mute)}.status{font-weight:600;min-height:1.4em}
+footer{border-top:1px solid var(--line);padding:30px 0 90px;font-size:14px;color:var(--mute)}
+.callbar{display:none}
+.proof{display:flex;flex-wrap:wrap;gap:10px 28px;padding:18px 0;border-block:1px solid var(--line);margin-top:34px;font-size:15px}
+.proof b{font-family:var(--disp);font-size:20px}
+/* A split */
+[data-l=A] .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-block:64px}
+[data-l=A] .ratecard{background:var(--acc);color:var(--accink);border-radius:22px;padding:34px;text-align:center}
+[data-l=A] .ratecard b{display:block;font:800 88px/1 var(--disp)}[data-l=A] .ratecard .stars{color:inherit}
+/* B bold band */
+[data-l=B] .hero{background:var(--surf);position:relative;overflow:hidden}
+[data-l=B] .hero .wrap{padding-block:72px;position:relative}
+[data-l=B] .bignum{position:absolute;right:-10px;top:-30px;font:800 clamp(180px,32vw,420px)/1 var(--disp);color:var(--acc);opacity:.16;pointer-events:none}
+[data-l=B] .hero h1{font-size:clamp(44px,9vw,110px);text-transform:uppercase}
+/* C editorial */
+[data-l=C] .hero .wrap{max-width:820px;text-align:center;padding-block:84px}
+[data-l=C] .hero p.sub,[data-l=C] .lead{margin-inline:auto}
+[data-l=C] .cta-row,[data-l=C] .rate{justify-content:center}
+[data-l=C] .hero h1{font-weight:400;font-style:normal}
+[data-l=C] .hero .rule{width:64px;height:3px;background:var(--acc);margin:22px auto}
+/* D sidebar */
+[data-l=D] .layout{display:grid;grid-template-columns:300px 1fr;gap:44px;padding-block:48px;align-items:start}
+[data-l=D] aside{position:sticky;top:88px;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:24px}
+[data-l=D] aside .big{font:800 56px/1 var(--disp);color:var(--acc-text)}
+[data-l=D] aside .btn{width:100%;margin-top:14px}
+[data-l=D] .main section{padding:36px 0}[data-l=D] .main section:first-child{padding-top:0}
+/* E ticket */
+[data-l=E] .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;padding-block:60px}
+[data-l=E] form.req{border:2px dashed var(--acc);box-shadow:8px 8px 0 var(--acc)}
+/* F process-first */
+[data-l=F] .hero .wrap{padding-block:56px}
+[data-l=F] .hero h1{max-width:18ch}
+[data-l=F] .steps{max-width:none;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+[data-l=F] .steps li{padding:62px 20px 20px}[data-l=F] .steps li::before{left:20px;top:16px}
+@media(max-width:860px){
+ [data-l=A] .hero .wrap,[data-l=E] .hero .wrap,[data-l=D] .layout{grid-template-columns:1fr}
+ [data-l=D] aside{position:static}
+ .menu{display:inline-block}nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;gap:0;border-bottom:1px solid var(--line);padding:8px 16px}
+ nav ul.open{display:flex}nav li a{display:block;padding:14px 4px}
+ header.top .wrap{position:relative}
+ .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--acc);padding:10px 16px;gap:10px}
+ .callbar a{flex:1;text-align:center;color:var(--accink);font-weight:700;text-decoration:none;padding:12px;border-radius:8px;border:2px solid var(--accink)}
+ section{padding:52px 0}
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
-img,svg{display:block;max-width:100%}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--copper-2);outline-offset:3px;border-radius:4px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--copper);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
-.skip:focus{left:12px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.demo-bar{background:#000;color:#e9e4da;font-size:13px;text-align:center;padding:8px 40px 8px 16px;position:relative}
-.demo-bar button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;color:#e9e4da;font-size:18px;cursor:pointer;padding:4px 8px}
-/* emergency strip */
-.strip{background:var(--copper);color:#fff;font-size:14px;font-weight:600}
-.strip .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
-.strip a{text-decoration:none}
-/* nav */
-header.site{background:var(--ink);color:#fff;position:sticky;top:0;z-index:50}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{font-family:var(--serif);font-weight:700;font-size:22px;text-decoration:none;letter-spacing:.2px}
-.logo span{color:var(--copper-2);font-style:italic;font-weight:500}
-nav ul{list-style:none;display:flex;gap:28px;align-items:center}
-nav a{text-decoration:none;font-size:15px;opacity:.9}
-nav a:hover{opacity:1;color:var(--copper-2)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn-copper{background:var(--copper);color:#fff}
-.btn-copper:hover{background:var(--copper-2)}
-.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:transparent}
-.btn-dark{background:var(--ink);color:#fff}
-.menu-toggle{display:none;background:none;border:2px solid rgba(255,255,255,.3);color:#fff;border-radius:10px;padding:8px 12px;font-size:15px;cursor:pointer}
-/* hero */
-.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;padding-top:72px;padding-bottom:88px;align-items:center}
-.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper-2);font-weight:600}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,5.4vw,68px);line-height:1.04;margin:16px 0 22px;letter-spacing:-.5px}
-.hero h1 em{color:var(--copper-2);font-weight:500}
-.hero p.lead{font-size:19px;color:#c9cfdb;max-width:560px}
-.hero .ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-.since{position:relative;border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:36px;background:linear-gradient(160deg,var(--ink-2),var(--ink))}
-.since .yr{font-family:var(--serif);font-size:clamp(84px,11vw,140px);line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--copper-2);letter-spacing:-3px}
-.since .lbl{margin-top:8px;color:#c9cfdb;font-size:15px}
-.since ul{list-style:none;margin-top:26px;display:grid;gap:12px}
-.since li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
-.since li svg{flex:none;margin-top:3px}
-.roofline{position:absolute;left:0;right:0;bottom:-1px;height:60px;color:var(--paper)}
-/* stats */
-.stats{margin-top:-1px;background:var(--paper)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line)}
-.stat{padding:36px 22px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat b{display:block;font-family:var(--serif);font-size:42px;line-height:1;color:var(--ink)}
-.stat span{font-size:14px;color:var(--muted)}
-/* sections */
-section{padding:96px 0}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
-h2{font-family:var(--serif);font-size:clamp(32px,3.6vw,46px);line-height:1.1;letter-spacing:-.3px;max-width:640px}
-.sec-head p{max-width:420px;color:var(--muted)}
-/* services split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.svc{border-radius:var(--r);padding:40px;position:relative;overflow:hidden}
-.svc.com{background:var(--ink);color:#fff}
-.svc.res{background:#fff;border:1px solid var(--line)}
-.svc h3{font-family:var(--serif);font-size:30px;margin-bottom:10px}
-.svc p{opacity:.85;margin-bottom:22px}
-.svc ul{list-style:none;display:grid;gap:10px}
-.svc li{padding:12px 0;border-top:1px solid rgba(127,127,127,.25);display:flex;justify-content:space-between;font-weight:500}
-.svc li::after{content:"→";color:var(--copper)}
-/* advantage */
-.adv{background:#efe9df}
-.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.adv-card{padding-top:22px;border-top:3px solid var(--copper)}
-.adv-card h3{font-size:20px;margin-bottom:8px}
-.adv-card p{color:var(--muted);font-size:16px}
-.quote{margin-top:56px;font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.35;max-width:880px}
-.quote small{display:block;font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:14px}
-/* projects */
-.proj{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
-.pcard{border-radius:var(--r);background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
-.pcard .art{height:170px;background:var(--ink-2);position:relative}
-.pcard:first-child .art{height:260px}
-.pcard .body{padding:22px}
-.pcard .meta{font-size:13px;color:var(--muted);margin-bottom:6px}
-.pcard h3{font-size:19px;line-height:1.3}
-/* team */
-.team{display:flex;flex-wrap:wrap;gap:12px}
-.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-size:15px}
-.chip b{font-weight:600}
-.chip span{color:var(--muted)}
-/* areas */
-.areas{background:var(--ink);color:#fff}
-.areas h2{color:#fff}
-.area-list{columns:4 160px;column-gap:28px;margin-top:8px}
-.area-list li{list-style:none;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);break-inside:avoid;color:#c9cfdb}
-/* booking */
-.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.book-side p{color:var(--muted);margin:14px 0 24px}
-.book-side .call{font-family:var(--serif);font-size:34px;text-decoration:none;color:var(--copper)}
-.form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px}
-.steps{display:flex;gap:8px;margin-bottom:22px}
-.steps i{flex:1;height:4px;border-radius:4px;background:var(--line)}
-.steps i.on{background:var(--copper)}
-fieldset{border:0}
-legend{font-weight:600;font-size:18px;margin-bottom:14px}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.opt{position:relative}
-.opt input{position:absolute;opacity:0}
-.opt label{display:block;border:1.5px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;font-weight:500}
-.opt input:checked+label{border-color:var(--copper);background:#fbf3ec}
-.opt input:focus-visible+label{outline:3px solid var(--copper-2);outline-offset:2px}
-.field{display:grid;gap:6px;margin-bottom:14px}
-.field label{font-size:14px;font-weight:600}
-.field input,.field select,.field textarea{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--copper);outline:none}
-.form-nav{display:flex;justify-content:space-between;margin-top:18px;gap:10px}
-.privacy{font-size:13px;color:var(--muted);margin-top:16px}
-.done{display:none;text-align:center;padding:20px 0}
-.err{color:#a3341f;font-size:14px;min-height:20px}
-/* footer */
-footer{background:#0a1320;color:#9aa5b8;padding:56px 0 32px;font-size:15px}
-footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
-footer h4{color:#fff;font-size:15px;margin-bottom:12px}
-footer ul{list-style:none;display:grid;gap:8px}
-footer a{text-decoration:none}
-footer .legal{grid-column:1/-1;border-top:1px solid #1f2b3e;padding-top:20px;margin-top:20px;font-size:13px}
-/* assistant */
-.assist-btn{position:fixed;right:20px;bottom:20px;z-index:60;background:var(--copper);color:#fff;border:0;border-radius:999px;padding:14px 20px;font:600 15px var(--sans);box-shadow:0 10px 30px rgba(15,27,45,.3);cursor:pointer}
-.assist{position:fixed;right:20px;bottom:84px;width:min(360px,calc(100vw - 40px));background:#fff;border-radius:18px;box-shadow:0 20px 50px rgba(15,27,45,.3);z-index:60;display:none;overflow:hidden;border:1px solid var(--line)}
-.assist.open{display:block}
-.assist header{background:var(--ink);color:#fff;padding:14px 18px;font-weight:600;display:flex;justify-content:space-between}
-.assist header button{background:none;border:0;color:#fff;font-size:18px;cursor:pointer}
-.assist .log{padding:16px;max-height:300px;overflow:auto;display:grid;gap:10px;font-size:15px}
-.msg{background:#f1ede6;border-radius:12px;padding:10px 12px}
-.msg.me{background:var(--ink);color:#fff;justify-self:end}
-.assist .qs{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 16px}
-.assist .qs button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font:500 13px var(--sans);cursor:pointer}
-.assist .note{font-size:12px;color:var(--muted);padding:0 16px 14px}
-/* responsive */
-@media (max-width:960px){
-  .hero .wrap,.book,.split{grid-template-columns:1fr}
-  .stats .wrap{grid-template-columns:1fr 1fr}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .adv-grid,.proj{grid-template-columns:1fr}
-  footer .wrap{grid-template-columns:1fr}
-  .menu-toggle{display:block}
-  nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:flex-start;padding:16px 24px 24px;gap:16px}
-  nav ul.open{display:flex}
-}
-@media (max-width:560px){
-  body{font-size:16px}
-  section{padding:72px 0}
-  .opts{grid-template-columns:1fr}
-  .strip .wrap{justify-content:center;text-align:center}
-  .since{padding:26px}
-  .svc,.form{padding:24px}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
-</style>
-</head>
-<body>
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style></head>
+<body data-l="E">
 <a class="skip" href="#main">Skip to content</a>
-<div class="demo-bar" id="demoBar">Concept demo prepared for Arrington Roofing. Not the official website, and not live. Facts are taken from arringtonroofing.com.
-  <button type="button" aria-label="Dismiss demo notice" onclick="this.parentElement.remove()">×</button></div>
-
-<div class="strip"><div class="wrap">
-  <span>24/7 Emergency Roof Service across Dallas–Fort Worth</span>
-  <a href="tel:+12146988443">Call (214) 698-8443</a>
-</div></div>
-
-<header class="site">
-  <div class="wrap">
-    <a class="logo" href="#top">Arrington <span>Roofing</span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="navList">Menu</button>
-    <nav aria-label="Primary">
-      <ul id="navList">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why">Why Arrington</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#areas">Areas</a></li>
-        <li><a class="btn btn-copper" href="#book">Book Inspection</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-  <section class="hero" id="top" aria-labelledby="h1">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Family-owned · Dallas, Texas</p>
-        <h1 id="h1">Four decades of roofs that <em>outlast the storm.</em></h1>
-        <p class="lead">Commercial and residential roofing for North Texas homes and businesses since 1983. GAF Master Elite certified, BBB A+ accredited, and every job backed by a 10-year labor warranty.</p>
-        <div class="ctas">
-          <a class="btn btn-copper" href="#book">Schedule a free roof inspection</a>
-          <a class="btn btn-ghost" href="tel:+12146988443">Call (214) 698-8443</a>
-        </div>
-      </div>
-      <aside class="since" aria-label="Company credentials">
-        <div class="yr" aria-hidden="true">1983</div>
-        <p class="lbl">Founded by Chris Arrington, Texas Tech alum and NTRCA board member</p>
-        <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d98444" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>GAF Master Elite residential &amp; commercial contractor</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d98444" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>CertainTeed Master Craftsman</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d98444" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>BBB A+ accredited since 1995</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d98444" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Roof financing available</li>
-        </ul>
-      </aside>
-    </div>
-    <svg class="roofline" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 60V40L180 8l180 32 180-32 180 32 180-32 180 32 180-32 180 32V60z"/></svg>
-  </section>
-
-  <div class="stats" aria-label="Arrington Roofing by the numbers">
-    <div class="wrap">
-      <div class="stat"><b>42</b><span>years serving Dallas–Fort Worth</span></div>
-      <div class="stat"><b>12,000+</b><span>completed projects</span></div>
-      <div class="stat"><b>4.9★</b><span>rated by 350+ Dallas homeowners</span></div>
-      <div class="stat"><b>10-yr</b><span>labor warranty on top of manufacturer coverage</span></div>
-    </div>
-  </div>
-
-  <section id="services" aria-labelledby="svc-h">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="svc-h">One crew for the warehouse roof and the family home.</h2>
-        <p>Arrington evaluates the whole roof system first, then recommends only what it needs.</p>
-      </div>
-      <div class="split">
-        <article class="svc com">
-          <h3>Commercial</h3>
-          <p>For property managers, churches and businesses across North Texas.</p>
-          <ul>
-            <li>Roof maintenance plans</li>
-            <li>Roof repairs</li>
-            <li>Roof coating restoration</li>
-            <li>Roof replacements</li>
-            <li>New construction roofing</li>
-          </ul>
-        </article>
-        <article class="svc res">
-          <h3>Residential</h3>
-          <p>For homeowners, from a single storm-damaged section to a full tear-off.</p>
-          <ul>
-            <li>Roof repairs &amp; storm damage</li>
-            <li>Attic ventilation</li>
-            <li>Roof replacements</li>
-            <li>New construction roofing</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="adv" id="why" aria-labelledby="why-h">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="why-h">The Arrington advantage</h2></div>
-      <div class="adv-grid">
-        <div class="adv-card"><h3>We guarantee our work</h3><p>A ten-year labor warranty, in addition to the manufacturer's warranty on materials.</p></div>
-        <div class="adv-card"><h3>We communicate with you</h3><p>An on-site roofing rep is assigned to your job and keeps you informed from start to finish.</p></div>
-        <div class="adv-card"><h3>Professional, responsible crews</h3><p>A clean, safe work area, treating your property as if it were their own.</p></div>
-      </div>
-      <p class="quote">"People often feel that when dealing with roofing contractors they are sold more than what they need. Our commitment is to fully evaluate your roof system and educate you."
-        <small>From Arrington Roofing's company statement</small></p>
-    </div>
-  </section>
-
-  <section id="projects" aria-labelledby="proj-h">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="proj-h">Recent commercial work</h2>
-        <p>Project photos would come from Arrington's own library. The illustrations here are placeholders.</p>
-      </div>
-      <div class="proj">
-        <article class="pcard">
-          <div class="art" aria-hidden="true"><svg viewBox="0 0 400 260" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="400" height="260" fill="#1b2b44"/><path d="M0 200 L120 120 L240 200 Z" fill="#b8642e" opacity=".85"/><path d="M160 200 L280 90 L400 200 Z" fill="#d98444" opacity=".6"/><rect y="200" width="400" height="60" fill="#0f1b2d"/></svg></div>
-          <div class="body"><p class="meta">Dallas Historic District · Dec 2025</p><h3>Historic landmark roof restoration: St. Paul Church Dallas</h3></div>
-        </article>
-        <article class="pcard">
-          <div class="art" aria-hidden="true"><svg viewBox="0 0 300 170" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="300" height="170" fill="#22344f"/><rect x="30" y="70" width="240" height="70" fill="#0f1b2d"/><rect x="30" y="60" width="240" height="12" fill="#e9e4da"/></svg></div>
-          <div class="body"><p class="meta">Dallas, TX 75247 · Apr 2026</p><h3>Commercial TPO roof recover</h3></div>
-        </article>
-        <article class="pcard">
-          <div class="art" aria-hidden="true"><svg viewBox="0 0 300 170" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="300" height="170" fill="#2a3d5a"/><path d="M20 140 L150 50 L280 140Z" fill="#b8642e" opacity=".75"/></svg></div>
-          <div class="body"><p class="meta">Oak Cliff, Dallas · Oct 2025</p><h3>Commercial roof replacement</h3></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0" aria-labelledby="team-h">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="team-h">The people on your roof</h2><p>Named team members from Arrington's About page.</p></div>
-      <div class="team">
-        <span class="chip"><b>Chris Arrington</b> <span>· Founder &amp; President</span></span>
-        <span class="chip"><b>James Townsend</b> <span>· Head of Commercial</span></span>
-        <span class="chip"><b>Reese Arrington</b> <span>· Sales &amp; Marketing</span></span>
-        <span class="chip"><b>Randy Eubank</b> <span>· Residential Roofing Expert</span></span>
-        <span class="chip"><b>Cameron Mills</b> <span>· Residential Specialist</span></span>
-        <span class="chip"><b>Dean Wray</b> <span>· Commercial Specialist</span></span>
-        <span class="chip"><b>Libbie Spielmann</b> <span>· Admin</span></span>
-      </div>
-    </div>
-  </section>
-
-  <section class="areas" id="areas" aria-labelledby="areas-h">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="areas-h">Serving the Dallas–Fort Worth metroplex</h2></div>
-      <ul class="area-list">
-        <li>Dallas</li><li>Oak Cliff</li><li>Plano</li><li>Frisco</li><li>Allen</li><li>McKinney</li><li>Richardson</li><li>Garland</li><li>Irving</li><li>Arlington</li><li>Coppell</li><li>Flower Mound</li><li>Corinth</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="book" aria-labelledby="book-h">
-    <div class="wrap book">
-      <div class="book-side">
-        <p class="eyebrow">Free roof inspection</p>
-        <h2 id="book-h">Book in under a minute, day or night.</h2>
-        <p>Pick what's going on, choose a time window, and the request goes straight to the Arrington office. For active leaks or storm damage, call now.</p>
-        <a class="call" href="tel:+12146988443">(214) 698-8443</a>
-        <p style="margin-top:18px">2203 Obenchain St, Dallas, TX 75208</p>
-      </div>
-      <form class="form" id="bookForm" novalidate>
-        <div class="steps" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
-        <div class="step" data-step="1">
-          <fieldset>
-            <legend>What do you need?</legend>
-            <div class="opts">
-              <div class="opt"><input type="radio" name="need" id="n1" value="Storm damage" required><label for="n1">Storm damage</label></div>
-              <div class="opt"><input type="radio" name="need" id="n2" value="Leak / repair"><label for="n2">Leak or repair</label></div>
-              <div class="opt"><input type="radio" name="need" id="n3" value="Replacement quote"><label for="n3">Replacement quote</label></div>
-              <div class="opt"><input type="radio" name="need" id="n4" value="Commercial"><label for="n4">Commercial property</label></div>
-            </div>
-          </fieldset>
-        </div>
-        <div class="step" data-step="2" hidden>
-          <div class="field"><label for="when">Preferred inspection window</label>
-            <select id="when" name="when" required><option value="">Choose…</option><option>Weekday morning</option><option>Weekday afternoon</option><option>Saturday</option><option>As soon as possible</option></select></div>
-          <div class="field"><label for="addr">Property address</label><input id="addr" name="addr" autocomplete="street-address" required></div>
-        </div>
-        <div class="step" data-step="3" hidden>
-          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="phone">Mobile number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
-          <div class="field"><label for="notes">Anything we should know? (optional)</label><textarea id="notes" name="notes" rows="3"></textarea></div>
-        </div>
-        <p class="err" id="err" role="alert"></p>
-        <div class="form-nav">
-          <button type="button" class="btn btn-dark" id="back" hidden>Back</button>
-          <button type="button" class="btn btn-copper" id="next" style="margin-left:auto">Continue</button>
-        </div>
-        <div class="done" id="done" role="status">
-          <h3 style="font-family:var(--serif);font-size:26px">Request received</h3>
-          <p>Demo only: nothing was sent. On the live site this would text the office and confirm your window by SMS.</p>
-        </div>
-        <p class="privacy"><strong>Privacy:</strong> We collect your name, phone, address and request details only to schedule your inspection. They go to Arrington Roofing and are never sold. This demo stores and sends nothing.</p>
-      </form>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <a class="logo" href="#top" style="color:#fff">Arrington <span>Roofing</span></a>
-      <p style="margin-top:12px;max-width:380px">Family-owned commercial and residential roofing contractor serving Dallas–Fort Worth since 1983.</p>
-    </div>
-    <div><h4>Contact</h4><ul><li><a href="tel:+12146988443">(214) 698-8443</a></li><li>2203 Obenchain St<br>Dallas, TX 75208</li></ul></div>
-    <div><h4>Explore</h4><ul><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#book">Book inspection</a></li></ul></div>
-    <p class="legal">Concept demo. Not affiliated with or published by Arrington Roofing. Review count from public listings as of Nov 2026.</p>
-  </div>
-</footer>
-
-<button class="assist-btn" id="assistBtn" aria-expanded="false" aria-controls="assist">Questions? Ask us</button>
-<div class="assist" id="assist" role="dialog" aria-label="Quick answers">
-  <header><span>Arrington quick answers</span><button type="button" aria-label="Close" id="assistClose">×</button></header>
-  <div class="log" id="log" aria-live="polite"><div class="msg">Hi! Pick a question below, or call (214) 698-8443 any time for emergencies.</div></div>
-  <div class="qs" id="qs">
-    <button type="button" data-a="Yes. Inspections are free. Use the booking form or call (214) 698-8443.">Is the inspection free?</button>
-    <button type="button" data-a="Yes, 24/7 emergency roof service is available across Dallas–Fort Worth.">Do you do emergencies?</button>
-    <button type="button" data-a="Every job carries a 10-year labor warranty, on top of the manufacturer's material warranty.">What's the warranty?</button>
-    <button type="button" data-a="Yes, roof financing is available. Ask during your inspection.">Is financing available?</button>
-  </div>
-  <p class="note">Demo: preset answers only. The live version would be an AI assistant trained on Arrington's own information.</p>
-</div>
-
+<div class="demo-bar">Concept demo for Arrington Roofing. Not the official site and not live. Ratings and contact details are from public listings (Nov 2026).<button type="button" aria-label="Dismiss demo notice" onclick="this.parentElement.remove()">&times;</button></div>
+<header class="top"><div class="wrap"><a class="logo" href="#">Arrington Roofing</a><nav aria-label="Primary"><ul id="nav"><li><a href="#services">Services</a></li><li><a href="#process">How it works</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></nav><button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button></div></header>
+<main id="main"><section class="hero"><div class="wrap"><div><p class="eyebrow">Dallas, TX roofing</p><h1>Dallas roofing with a 4.9 Google rating.</h1><p class="sub">For active leaks or storm damage, call now. Otherwise, request an estimate online.</p><div class="cta-row"><a class="btn" href="#request">Request an estimate</a> <a class="btn ghost" href="tel:+12146988443">Call (214) 698-8443</a></div><div class="rate"><b>4.9</b><span><span class="stars" aria-hidden="true">★★★★★</span> 192 Google reviews, as listed Nov 2026. Also rated Yelp 4.5 (18).</span></div></div><form class="req" id="request" novalidate>
+  <h2 style="font-size:26px">Request an estimate</h2>
+  <label>Your name<input name="n" autocomplete="name" required></label>
+  <label>Phone<input name="p" type="tel" autocomplete="tel" required></label>
+  <label>What do you need?<select name="k"><option>Leak or repair</option><option>Full replacement</option><option>Storm damage check</option><option>Not sure yet</option></select></label>
+  <label>Details<textarea name="d" rows="3"></textarea></label>
+  <button class="btn" type="submit">Send request</button>
+  <p class="status" role="status" aria-live="polite"></p>
+  <p class="privacy"><strong>Privacy:</strong> Your name, phone and request would be used only to answer you and would be shared with Arrington Roofing, never sold. This demo stores and sends nothing.</p>
+</form></div></section><section id="services"><div class="wrap"><p class="eyebrow">Services</p><h2>What Arrington Roofing can help with</h2><p class="lead">Typical roofing work for Dallas. <em>The list is a starting point to confirm with the owner before launch.</em></p><div class="cards"><div class="card"><h3>Roof repair</h3><p>Leaks, missing shingles and flashing problems found and fixed.</p></div><div class="card"><h3>Roof replacement</h3><p>A full tear-off and new roof when repair no longer makes sense.</p></div><div class="card"><h3>Storm damage inspection</h3><p>A close look after hail or wind, with photos you can keep.</p></div><div class="card"><h3>Estimates</h3><p>A written estimate before any work starts.</p></div></div></div></section><section id="process"><div class="wrap"><p class="eyebrow">How it works</p><h2>Three steps, no surprises</h2><ol class="steps" style="padding:0"><li><b>Tell us what you see</b>A stain, a leak, a shingle in the yard. A sentence is enough.</li><li><b>We look at the roof</b>Someone from the team inspects it and explains what they find.</li><li><b>You get it in writing</b>A clear estimate. You decide, with no pressure.</li></ol></div></section><section id="reviews"><div class="wrap"><p class="eyebrow">Reputation</p><h2>What the public ratings show</h2><p class="lead">Ratings come from public listings, last checked Nov 2026. Review text is not reproduced here; the live site would embed real reviews with permission.</p><div class="proof"><span><b>4.9</b> Google rating</span><span><b>192</b> Google reviews</span><span><b>Yelp 4.5 (18)</b></span></div></div></section><section id="contact"><div class="wrap"><p class="eyebrow">Contact</p><h2>Talk to Arrington Roofing</h2><p><a href="tel:+12146988443">(214) 698-8443</a></p><p class="note">Serving Dallas, TX and nearby. Exact service area to confirm.</p></div></section></main>
+<footer><div class="wrap"><p>Concept demo, not affiliated with Arrington Roofing. Ratings as listed publicly in Nov 2026. Services and service area to confirm with the business.</p></div></footer>
+<div class="callbar"><a href=tel:+12146988443>Call</a><a href="#request">Estimate</a></div>
 <script>
-(function(){
-  var t=document.querySelector('.menu-toggle'),l=document.getElementById('navList');
-  t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o)});
-  l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');t.setAttribute('aria-expanded','false')}});
-  var f=document.getElementById('bookForm'),steps=f.querySelectorAll('.step'),bars=f.querySelectorAll('.steps i'),cur=0,
-      next=document.getElementById('next'),back=document.getElementById('back'),err=document.getElementById('err');
-  function show(i){steps.forEach(function(s,k){s.hidden=k!==i});bars.forEach(function(b,k){b.classList.toggle('on',k<=i)});back.hidden=i===0;next.textContent=i===steps.length-1?'Request inspection':'Continue';err.textContent=''}
-  function valid(){var s=steps[cur];if(cur===0&&!s.querySelector('input:checked')){err.textContent='Please choose an option.';return false}
-    var bad=[].slice.call(s.querySelectorAll('[required]')).filter(function(x){return x.type!=='radio'&&!x.value.trim()});
-    if(bad.length){err.textContent='Please complete the highlighted fields.';bad[0].focus();return false}return true}
-  next.addEventListener('click',function(){if(!valid())return;if(cur<steps.length-1){cur++;show(cur);var fi=steps[cur].querySelector('input,select');fi&&fi.focus()}else{steps.forEach(function(s){s.hidden=true});f.querySelector('.form-nav').hidden=true;document.getElementById('done').style.display='block'}});
-  back.addEventListener('click',function(){cur--;show(cur)});
-  var b=document.getElementById('assistBtn'),a=document.getElementById('assist'),log=document.getElementById('log');
-  function tog(o){a.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}
-  b.addEventListener('click',function(){tog(!a.classList.contains('open'))});
-  document.getElementById('assistClose').addEventListener('click',function(){tog(false);b.focus()});
-  document.getElementById('qs').addEventListener('click',function(e){var q=e.target.closest('button');if(!q)return;
-    var m=document.createElement('div');m.className='msg me';m.textContent=q.textContent;log.appendChild(m);
-    var r=document.createElement('div');r.className='msg';r.textContent=q.dataset.a;log.appendChild(r);log.scrollTop=log.scrollHeight});
+(function(){var b=document.querySelector('.menu'),n=document.getElementById('nav');
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus()}});
+var f=document.getElementById('request'),s=f.querySelector('.status');
+f.addEventListener('submit',function(e){e.preventDefault();
+ if(!f.n.value.trim()||!f.p.value.trim()){s.textContent='Please add your name and phone number.';return}
+ s.textContent='Demo only: nothing was sent. Live, this would reach Arrington Roofing and confirm by text.';f.reset()});
 })();
-</script>
-</body>
-</html>
+</script></body></html>
