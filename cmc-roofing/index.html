@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMC Roofing Services | Farmers Branch & Dallas Roofing (Concept Demo)</title>
+<meta name="description" content="Concept site for CMC Roofing Services, a roofing contractor at 11496 Luna Rd, Farmers Branch, TX, rated 4.9 on Google.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf7; --ink:#121212; --soft:#5b5b5b; --line:#e4e1d9; --card:#fff;
+  --sun:#f5b301; --sun-2:#ffd25a; --sky:#dfe9f2; --red:#c2361f;
+  --max:1200px; --r:18px;
+  --head:"Archivo", "Arial Black", sans-serif; --body:"Manrope", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.demo-bar{background:var(--sun);color:var(--ink);font-size:13px;font-weight:600;text-align:center;padding:8px 44px 8px 16px;position:relative}
+.demo-bar button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;font-size:18px;cursor:pointer;padding:4px 8px}
+header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--head);font-weight:900;font-size:22px;letter-spacing:-.5px}
+.logo .mark{width:38px;height:38px;border-radius:10px;background:var(--ink);display:grid;place-items:center}
+nav ul{list-style:none;display:flex;gap:26px;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:15px}
+nav a:hover{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px;text-underline-offset:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:12px;font:700 15px var(--body);text-decoration:none;border:2px solid var(--ink);cursor:pointer;transition:transform .15s, box-shadow .15s}
+.btn-sun{background:var(--sun);box-shadow:4px 4px 0 var(--ink)}
+.btn-sun:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn-line{background:#fff}
+.btn-ink{background:var(--ink);color:#fff}
+.menu-toggle{display:none;border:2px solid var(--ink);background:#fff;border-radius:10px;padding:8px 12px;font:700 14px var(--body);cursor:pointer}
+/* hero */
+.hero{padding:64px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:stretch}
+.hero h1{font-family:var(--head);font-weight:900;font-size:clamp(44px,6.6vw,92px);line-height:.95;letter-spacing:-2.5px;text-transform:uppercase}
+.hero h1 .hl{background:linear-gradient(transparent 58%,var(--sun) 58%);padding:0 6px}
+.hero p.lead{font-size:20px;color:var(--soft);max-width:560px;margin:26px 0 30px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.rating-card{background:var(--ink);color:#fff;border-radius:28px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;min-height:360px}
+.rating-card .big{font-family:var(--head);font-weight:900;font-size:120px;line-height:.9;letter-spacing:-4px}
+.stars{color:var(--sun);font-size:28px;letter-spacing:4px}
+.rating-card p{color:#cfcfcf}
+.rating-card .src{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.rating-card .src span{border:1px solid #444;border-radius:999px;padding:6px 12px;font-size:13px}
+.rain{position:absolute;inset:0;pointer-events:none;opacity:.18;background:repeating-linear-gradient(105deg,transparent 0 18px,#fff 18px 19px)}
+/* trust row */
+.trust{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin-top:56px}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust div{padding:22px 18px;border-right:2px solid var(--ink);font-weight:700;display:flex;gap:10px;align-items:center}
+.trust div:last-child{border-right:0}
+.trust svg{flex:none}
+/* storm checker */
+section{padding:96px 0}
+h2{font-family:var(--head);font-weight:900;font-size:clamp(34px,4.4vw,58px);line-height:1;letter-spacing:-1.5px;text-transform:uppercase}
+.kicker{font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.check{background:var(--sky)}
+.check-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.check p.sub{color:var(--soft);margin-top:18px;max-width:440px}
+.quiz{background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:28px;box-shadow:8px 8px 0 var(--ink)}
+.quiz h3{font-family:var(--head);font-size:22px;margin-bottom:16px}
+.q{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.q input{width:22px;height:22px;accent-color:var(--ink)}
+.q label{font-weight:600;cursor:pointer}
+.result{margin-top:18px;padding:16px;border-radius:12px;background:#fff6d9;font-weight:600;min-height:56px}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.svc{background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:12px}
+.svc .n{font-family:var(--head);font-weight:900;font-size:44px;color:var(--sun);-webkit-text-stroke:1.5px var(--ink);line-height:1}
+.svc h3{font-family:var(--head);font-size:22px}
+.svc p{color:var(--soft);font-size:16px}
+.confirm{display:inline-block;margin-top:22px;background:#fff6d9;border:1.5px dashed #c99700;color:#6b5200;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600}
+/* process */
+.process{background:var(--ink);color:#fff}
+.process h2{color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border-top:2px solid #333}
+.steps div{padding:28px 22px 0 0}
+.steps b{display:inline-block;background:var(--sun);color:var(--ink);font-family:var(--head);border-radius:8px;padding:4px 10px;margin-bottom:14px}
+.steps h3{font-size:20px;margin-bottom:6px}
+.steps p{color:#bdbdbd;font-size:15px}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.info{display:grid;gap:18px;margin-top:28px}
+.info a,.info div{display:flex;gap:14px;align-items:flex-start;text-decoration:none;font-weight:600;font-size:18px}
+.info small{display:block;font-weight:500;color:var(--soft);font-size:14px}
+.map{margin-top:28px;border:2px solid var(--ink);border-radius:var(--r);height:220px;background:
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/28px 28px,
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/28px 28px,#fff;position:relative}
+.map .pin{position:absolute;left:52%;top:42%;transform:translate(-50%,-100%);background:var(--ink);color:#fff;padding:8px 12px;border-radius:10px;font-weight:700;font-size:13px}
+.map .pin::after{content:"";position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);border:8px solid transparent;border-top-color:var(--ink);border-bottom:0}
+form.card{background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:30px}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label{font-weight:700;font-size:14px}
+.field input,.field select,.field textarea{font:inherit;padding:13px 14px;border:2px solid var(--line);border-radius:10px;background:#fff}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ink);outline:none}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.privacy{font-size:13px;color:var(--soft);margin-top:14px}
+.status{margin-top:12px;font-weight:600;min-height:24px}
+footer{border-top:2px solid var(--ink);padding:40px 0;font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sticky-call{display:none}
+@media (max-width:960px){
+  .hero-grid,.check-grid,.contact-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:20px}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .trust div:nth-child(2){border-right:0}
+  .trust div:nth-child(-n+2){border-bottom:2px solid var(--ink)}
+  .menu-toggle{display:block}
+  nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:var(--bg);border-bottom:2px solid var(--ink);flex-direction:column;align-items:flex-start;padding:18px 24px 24px}
+  nav ul.open{display:flex}
+}
+@media (max-width:600px){
+  body{font-size:16px;padding-bottom:72px}
+  section{padding:72px 0}
+  .svc-grid,.steps,.row{grid-template-columns:1fr}
+  .rating-card .big{font-size:96px}
+  .sticky-call{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px}
+  .sticky-call a{flex:1}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar">Concept demo for CMC Roofing Services. Not the official site and not live. Contact details are from public business directories (Nov 2026).
+  <button type="button" aria-label="Dismiss demo notice" onclick="this.parentElement.remove()">×</button></div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5b301" stroke-width="2.6"><path d="M3 12 12 4l9 8"/><path d="M6 10v9h12v-9"/></svg></span>CMC ROOFING</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navList">Menu</button>
+    <nav aria-label="Primary">
+      <ul id="navList">
+        <li><a href="#check">Storm check</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How it works</a></li>
+        <li><a class="btn btn-sun" href="#contact">Free estimate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="h1" style="padding-bottom:0">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="h1">Roofs done <span class="hl">right</span> in Farmers Branch &amp; Dallas.</h1>
+        <p class="lead">Local roofing crew on Luna Road, rated 4.9 by 143 Google reviewers. Get an estimate request in before the next North Texas storm does.</p>
+        <div class="ctas">
+          <a class="btn btn-sun" href="#contact">Get a free estimate</a>
+          <a class="btn btn-line" href="tel:+12143076347">Call (214) 307-6347</a>
+        </div>
+      </div>
+      <div class="rating-card" aria-label="Customer rating">
+        <div class="rain" aria-hidden="true"></div>
+        <div>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <div class="big">4.9</div>
+          <p>Average Google rating across 143 reviews</p>
+        </div>
+        <div class="src"><span>Google 4.9 · 143</span><span>Birdeye 4.8 · 197</span></div>
+      </div>
+    </div>
+    <div class="trust" aria-label="Highlights">
+      <div class="wrap">
+        <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Locally based in Farmers Branch</div>
+        <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>4.9★ Google rating</div>
+        <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h18M12 3v18"/></svg>Free estimates</div>
+        <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>Online requests, any hour</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="check" id="check" aria-labelledby="check-h">
+    <div class="wrap check-grid">
+      <div>
+        <p class="kicker">60-second storm check</p>
+        <h2 id="check-h">Is your roof asking for help?</h2>
+        <p class="sub">Tick anything you've noticed since the last storm. You'll get a plain-English read on how urgent it is, and you can book with one tap.</p>
+      </div>
+      <div class="quiz" role="group" aria-labelledby="quiz-h">
+        <h3 id="quiz-h">What have you noticed?</h3>
+        <div class="q"><input type="checkbox" id="c1" data-w="3"><label for="c1">Water stain or drip inside</label></div>
+        <div class="q"><input type="checkbox" id="c2" data-w="2"><label for="c2">Missing, lifted or cracked shingles</label></div>
+        <div class="q"><input type="checkbox" id="c3" data-w="2"><label for="c3">Hail dents on gutters, vents or cars</label></div>
+        <div class="q"><input type="checkbox" id="c4" data-w="1"><label for="c4">Granules piling up in gutters</label></div>
+        <div class="q"><input type="checkbox" id="c5" data-w="1"><label for="c5">Roof is 15+ years old</label></div>
+        <div class="result" id="result" aria-live="polite">Nothing ticked yet.</div>
+        <a class="btn btn-ink" href="#contact" style="margin-top:14px">Book a free inspection</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <p class="kicker">Services</p>
+      <h2 id="svc-h">What we handle</h2>
+      <div class="svc-grid">
+        <article class="svc"><span class="n">01</span><h3>Roof inspections</h3><p>A documented look at shingles, flashing, vents and decking, with photos you can keep.</p></article>
+        <article class="svc"><span class="n">02</span><h3>Repairs &amp; leaks</h3><p>Targeted fixes for leaks, wind-lifted shingles and flashing failures.</p></article>
+        <article class="svc"><span class="n">03</span><h3>Full replacement</h3><p>Tear-off and new roof system, with the scope and materials agreed in writing up front.</p></article>
+      </div>
+      <p class="confirm">Demo note: the service list and descriptions are placeholders to confirm with CMC before launch.</p>
+    </div>
+  </section>
+
+  <section class="process" id="process" aria-labelledby="proc-h">
+    <div class="wrap">
+      <p class="kicker" style="color:var(--sun)">How it works</p>
+      <h2 id="proc-h">From first call to final nail</h2>
+      <div class="steps">
+        <div><b>01</b><h3>Request</h3><p>Send the form or call. Requests are logged even after hours.</p></div>
+        <div><b>02</b><h3>Inspect</h3><p>A roofer visits, inspects, and photographs what they find.</p></div>
+        <div><b>03</b><h3>Estimate</h3><p>You get a clear written scope and price before any work starts.</p></div>
+        <div><b>04</b><h3>Build</h3><p>The crew completes the work and cleans up the site.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="ct-h">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="kicker">Free estimate</p>
+        <h2 id="ct-h">Let's look at your roof</h2>
+        <div class="info">
+          <a href="tel:+12143076347"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>(214) 307-6347<small>Office line</small></span></a>
+          <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>11496 Luna Rd, Suite 100<small>Farmers Branch, TX 75234</small></span></div>
+        </div>
+        <div class="map" role="img" aria-label="Location marker for 11496 Luna Rd, Farmers Branch"><span class="pin">CMC · Luna Rd</span></div>
+      </div>
+      <form class="card" id="estForm" novalidate>
+        <div class="row">
+          <div class="field"><label for="fn">Name</label><input id="fn" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="field"><label for="ad">Property address</label><input id="ad" name="address" autocomplete="street-address" required></div>
+        <div class="field"><label for="ty">What do you need?</label>
+          <select id="ty" name="type" required><option value="">Choose…</option><option>Inspection</option><option>Repair / leak</option><option>Replacement estimate</option><option>Not sure</option></select></div>
+        <div class="field"><label for="ms">Details (optional)</label><textarea id="ms" name="message" rows="3"></textarea></div>
+        <button class="btn btn-sun" type="submit" style="width:100%">Request my free estimate</button>
+        <p class="status" id="status" role="status"></p>
+        <p class="privacy"><strong>Privacy:</strong> Your name, phone, address and request are used only to respond to your estimate request. They are shared with CMC Roofing Services and never sold. This demo stores and sends nothing.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>CMC Roofing Services · 11496 Luna Rd Ste 100, Farmers Branch, TX 75234 · <a href="tel:+12143076347">(214) 307-6347</a></span>
+    <span>Concept demo, not affiliated with CMC Roofing Services. Ratings as listed publicly in Nov 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky-call"><a class="btn btn-ink" href="tel:+12143076347">Call</a><a class="btn btn-sun" href="#contact">Free estimate</a></div>
+
+<script>
+(function(){
+  var t=document.querySelector('.menu-toggle'),l=document.getElementById('navList');
+  t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');t.setAttribute('aria-expanded','false')}});
+  var boxes=document.querySelectorAll('.quiz input'),res=document.getElementById('result');
+  function score(){var s=0;boxes.forEach(function(b){if(b.checked)s+=+b.dataset.w});
+    res.textContent=s===0?'Nothing ticked yet.':s>=3?'Book soon: these signs can mean water is already getting in.':s>=2?'Worth an inspection: get it checked before the next storm.':'Low urgency. A routine check is still a good idea.'}
+  boxes.forEach(function(b){b.addEventListener('change',score)});
+  var f=document.getElementById('estForm'),st=document.getElementById('status');
+  f.addEventListener('submit',function(e){e.preventDefault();
+    var bad=[].slice.call(f.querySelectorAll('[required]')).filter(function(x){return !x.value.trim()});
+    if(bad.length){st.textContent='Please fill in name, phone, address and what you need.';bad[0].focus();return}
+    st.textContent='Demo only: nothing was sent. Live, this would reach CMC instantly and text you a confirmation.';f.reset();score()});
+})();
+</script>
+</body>
+</html>
