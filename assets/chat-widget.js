@@ -19,6 +19,8 @@
   var CSS = [
     '[hidden]{display:none !important}',
     '.tfc-launch{position:fixed;right:16px;bottom:16px;z-index:2147483000;box-sizing:border-box;max-width:calc(100vw - 32px);padding:12px 18px;border:2px solid transparent;border-radius:999px;background:var(--acc,#1f4e79);color:var(--accink,#ffffff);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;font-weight:600;line-height:1.2;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25)}',
+    // Phones: a round 50px launcher (its text stays as the accessible name) so it does not cover page buttons.
+    '@media (max-width: 720px){.tfc-launch{width:50px;height:50px;padding:0;font-size:0;line-height:0}.tfc-launch::before{content:"";display:block;width:22px;height:17px;margin:0 auto;border:2.5px solid currentColor;border-radius:8px 8px 8px 2px}}',
     '.tfc-panel{position:fixed;right:16px;bottom:72px;z-index:2147483000;box-sizing:border-box;width:min(360px,calc(100vw - 24px));max-height:min(560px,calc(100vh - 100px));display:flex;flex-direction:column;overflow:hidden;background:var(--bg,#ffffff);color:var(--ink,#1c2024);border:1px solid rgba(0,0,0,.2);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.4;animation:tfc-in .18s ease-out}',
     '.tfc-panel:focus{outline:none}',
     '.tfc-note{margin:0;padding:8px 12px;font-size:12px;background:rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.1)}',
