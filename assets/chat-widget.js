@@ -290,7 +290,7 @@
         }
       } else if (intent === 'location') {
         addBot([cfg.city
-          ? 'Serving ' + cfg.city + ', TX and nearby. Exact service area to confirm.'
+          ? 'Serving ' + cfg.city + ', TX. Exact service area to confirm with the owner.'
           : 'Service area to confirm with the owner.']);
       } else if (intent === 'hours') {
         addBot([hasPhone
