@@ -4,6 +4,10 @@
  * Config: <script type="application/json" id="chat-config"> with
  *   business, phone, city, trade, services (array of strings), and an
  *   optional bottom (px from the bottom edge, default 16) for the launcher.
+ * Dock: a page can give its own opener, <button type="button" data-chat-open hidden>,
+ *   for example in a phone call bar. The widget unhides it and, while one is on
+ *   screen, hides its floating launcher (so nothing floats over the text) and opens
+ *   the panel straight above the bar. Escape returns focus to the control that opened it.
  * Every config value and every typed answer is inserted with textContent.
  */
 (function () {
@@ -15,6 +19,7 @@
   var LAUNCH_ID = 'tfc-chat-launch';
   var INPUT_ID = 'tfc-chat-input';
   var NOTE = 'Demo assistant with scripted answers. It sends nothing.';
+  var SHORT = 500; // viewport height (px) below which the panel goes full height; matches the CSS media query below
 
   var CSS = [
     '[hidden]{display:none !important}',
@@ -39,7 +44,10 @@
     '.tfc-form{padding:8px 12px 12px;border-top:1px solid rgba(0,0,0,.1)}',
     '.tfc-label{display:block;margin-bottom:4px;font-size:13px;font-weight:600}',
     '.tfc-row{display:flex;gap:6px}',
-    '.tfc-input{flex:1 1 auto;min-width:0;box-sizing:border-box;padding:9px 10px;border:1px solid rgba(0,0,0,.35);border-radius:8px;background:#ffffff;color:var(--ink,#1c2024);font-family:inherit;font-size:15px}',
+    // 16px: below that, iPhones zoom the whole page when the input takes focus.
+    '.tfc-input{flex:1 1 auto;min-width:0;box-sizing:border-box;padding:9px 10px;border:1px solid rgba(0,0,0,.35);border-radius:8px;background:#ffffff;color:var(--ink,#1c2024);font-family:inherit;font-size:16px}',
+    // Short screens (see SHORT): quick replies in one row that scrolls sideways, and the log takes what is left.
+    '@media (max-height: 499.98px){.tfc-quick{flex-wrap:nowrap;overflow-x:auto}.tfc-chip{flex:none;white-space:nowrap}.tfc-log{min-height:0}}',
     '.tfc-send{padding:9px 14px;border:0;border-radius:8px;background:var(--acc,#1f4e79);color:var(--accink,#ffffff);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}',
     '.tfc-launch:focus-visible,.tfc-chip:focus-visible,.tfc-send:focus-visible,.tfc-input:focus-visible,.tfc-tel:focus-visible{outline:3px solid var(--ink,#1c2024);outline-offset:2px}',
     '.tfc-close:focus-visible{outline:3px solid var(--accink,#ffffff);outline-offset:2px}',
@@ -176,12 +184,33 @@
     panel.tabIndex = -1;
     panel.hidden = true;
 
-    // The panel sits just above the launcher (about 46px tall plus a 10px gap),
-    // and never runs off the top of the viewport.
-    var panelBottom = cfg.bottom + 56;
+    // Page-supplied openers (see Dock above). Only buttons count.
+    var openers = Array.prototype.slice.call(document.querySelectorAll('[data-chat-open]')).filter(function (o) {
+      return o.tagName === 'BUTTON';
+    });
+    var controls = [launcher].concat(openers);
+    var lastOpener = launcher;
+
+    function onScreen(node) {
+      return !node.hidden && node.getClientRects().length > 0 && getComputedStyle(node).visibility !== 'hidden';
+    }
+
+    // The panel sits just above the launcher (about 46px tall plus a 10px gap), or straight above
+    // the page's bar when docked, and never runs off the top of the viewport. On a short screen
+    // (a phone held sideways) that leaves no room for the input, so the panel takes the full height
+    // over the bar or launcher; its Close button and Escape still shut it.
     launcher.style.bottom = cfg.bottom + 'px';
-    panel.style.bottom = panelBottom + 'px';
-    panel.style.maxHeight = 'min(560px, calc(100vh - ' + (panelBottom + 28) + 'px))';
+    function syncDock() {
+      var shown = openers.filter(onScreen);
+      var docked = shown.length > 0;
+      launcher.hidden = docked;
+      var short = window.innerHeight < SHORT;
+      // Docked: clear the page's bar as drawn, since iPhones add safe-area padding under it.
+      var barClear = docked ? Math.ceil(window.innerHeight - shown[0].parentNode.getBoundingClientRect().top) + 12 : 0;
+      var panelBottom = short ? 8 : docked ? Math.max(cfg.bottom, barClear) : cfg.bottom + 56;
+      panel.style.bottom = panelBottom + 'px';
+      panel.style.maxHeight = short ? (window.innerHeight - 16) + 'px' : 'min(560px, calc(100vh - ' + (panelBottom + 28) + 'px))';
+    }
 
     var note = el('p', 'tfc-note', NOTE);
 
@@ -225,6 +254,20 @@
 
     document.body.appendChild(launcher);
     document.body.appendChild(panel);
+
+    openers.forEach(function (o) {
+      o.type = 'button';
+      o.setAttribute('aria-controls', PANEL_ID);
+      o.setAttribute('aria-expanded', 'false');
+      o.hidden = false;
+    });
+    syncDock();
+    var pending = false;
+    window.addEventListener('resize', function () {
+      if (pending) { return; }
+      pending = true;
+      requestAnimationFrame(function () { pending = false; syncDock(); });
+    });
 
     function bubble(kind, parts) {
       var b = el('div', 'tfc-msg tfc-' + kind);
@@ -340,9 +383,14 @@
 
     function isOpen() { return !panel.hidden; }
 
-    function openPanel() {
+    function setExpanded(value) {
+      controls.forEach(function (c) { c.setAttribute('aria-expanded', value); });
+    }
+
+    function openPanel(from) {
+      lastOpener = from || launcher;
       panel.hidden = false;
-      launcher.setAttribute('aria-expanded', 'true');
+      setExpanded('true');
       if (!state.greeted) {
         state.greeted = true;
         addBot([
@@ -357,12 +405,18 @@
 
     function closePanel(returnFocus) {
       panel.hidden = true;
-      launcher.setAttribute('aria-expanded', 'false');
-      if (returnFocus) { launcher.focus(); }
+      setExpanded('false');
+      if (returnFocus) {
+        // back to the control that opened the panel; if it has left the screen, the first one still on it
+        var target = onScreen(lastOpener) ? lastOpener : controls.filter(onScreen)[0];
+        if (target) { target.focus(); }
+      }
     }
 
-    launcher.addEventListener('click', function () {
-      if (isOpen()) { closePanel(true); } else { openPanel(); }
+    controls.forEach(function (c) {
+      c.addEventListener('click', function () {
+        if (isOpen()) { closePanel(true); } else { openPanel(c); }
+      });
     });
 
     closeBtn.addEventListener('click', function () { closePanel(true); });

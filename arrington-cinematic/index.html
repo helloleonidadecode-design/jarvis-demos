@@ -291,10 +291,11 @@ html:not(.js) .static-hero{display:block;min-height:100vh}
 }
 @media (max-width:720px), (orientation: landscape) and (pointer: coarse) and (max-height: 560px){
   body{padding-bottom:4.5rem}
-  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--deep);box-shadow:0 -10px 24px -12px rgba(0,0,0,.6)}
+  .callbar{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--deep);box-shadow:0 -10px 24px -12px rgba(0,0,0,.6)}
   .callbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:.4rem;font-weight:600;text-decoration:none}
   .callbar a:first-child{border:1px solid rgba(238,242,242,.6);color:var(--text-primary)}
-  .callbar a:last-child{background:var(--accent);color:var(--canvas)}
+  .callbar a:last-of-type{background:var(--accent);color:var(--canvas)}
+  .callbar button{min-height:48px;border-radius:.4rem;border:1px solid rgba(238,242,242,.6);background:none;color:var(--text-primary);font-family:inherit;font-size:1rem;font-weight:600;line-height:1.2;cursor:pointer}
 }
 .grain{position:fixed;inset:-50%;z-index:70;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:drift 90s linear -20s infinite}
 @keyframes drift{0%,100%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}}
@@ -558,7 +559,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   </div>
 </footer>
 
-<nav class="callbar" aria-label="Quick contact"><a href="tel:+14696219622">Call</a><a href="#request">Estimate</a></nav>
+<nav class="callbar" aria-label="Quick contact"><a href="tel:+14696219622">Call</a><a href="#request">Estimate</a><button type="button" data-chat-open hidden aria-label="Ask the demo assistant">Ask</button></nav>
 <div class="grain" aria-hidden="true"></div>
 
 <script>

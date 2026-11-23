@@ -88,7 +88,7 @@ form.req input,form.req select,form.req textarea{font:inherit;padding:0.75rem;bo
  nav ul.open{display:flex}nav li a{display:block;padding:0.875rem 0.25rem}
  header.top .wrap{position:relative}
  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--acc);padding:0.625rem 1rem;gap:0.625rem}
- .callbar a{flex:1;text-align:center;color:var(--accink);font-weight:700;text-decoration:none;padding:0.75rem;border-radius:0.5rem;border:2px solid var(--accink)}
+ .callbar a,.callbar button{flex:1;text-align:center;color:var(--accink);font:700 1rem/1.2 var(--body);text-decoration:none;padding:0.75rem;border-radius:0.5rem;border:2px solid var(--accink);background:none;cursor:pointer;min-height:3rem}
  section{padding:3.25rem 0}
 }
 /* v2 (2026-11-22): trade motif, editorial type, bento proof, numbered cards, timeline, pill nav, ticker, grain */
@@ -232,7 +232,7 @@ footer.foot a{color:var(--ink)}footer.foot p+p{margin-top:0.5rem}.fnote{margin-t
   <p class="privacy"><strong>Privacy:</strong> This demo stores and sends nothing. On the live site, your name, phone and request would go only to JP Exteriors, to answer you.</p>
 </form></div></section><section id="contact" data-tone="base"><div class="wrap"><p class="eyebrow">Contact</p><h2>Talk to JP Exteriors</h2><p><a href="tel:+17372010992">(737) 201-0992</a></p><p class="note">Serving Austin, TX. Exact service area to confirm with the owner.</p></div></section></main>
 <footer class="foot"><div class="wrap fgrid"><div class="fbrand"><p class="flogo">JP Exteriors</p><p>Serving Austin, TX.</p><p><a href="#request">Request an estimate</a></p></div><details open><summary>Services</summary><ul><li><a href="#services">Roof repair</a></li><li><a href="#services">Roof replacement</a></li><li><a href="#services">Storm damage inspection</a></li><li><a href="#services">Estimates</a></li></ul><p class="fnote">The list is to confirm with the owner.</p></details><details open><summary>Contact</summary><p><a href="tel:+17372010992">(737) 201-0992</a></p><p class="fnote">Exact service area to confirm with the owner.</p></details><details class="fabout" open><summary>About this demo</summary><p>Concept demo, not affiliated with JP Exteriors. Ratings as listed publicly in Nov 2026. Services and service area to confirm with the business.</p></details></div></footer>
-<div class="callbar"><a href=tel:+17372010992>Call</a><a href="#request">Estimate</a></div>
+<div class="callbar"><a href=tel:+17372010992>Call</a><a href="#request">Estimate</a><button type="button" data-chat-open hidden aria-label="Ask the demo assistant">Ask</button></div>
 <script>
 (function(){var b=document.querySelector('.menu'),n=document.getElementById('nav');
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
