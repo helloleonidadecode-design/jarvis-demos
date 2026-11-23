@@ -3,212 +3,822 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Arrington Roofing | Dallas Roofing (Cinematic Concept)</title>
+<title>Arrington Roofing | Dallas Roofing (Cinematic Concept Demo)</title>
 <meta name="description" content="Cinematic concept demo of a new website for Arrington Roofing, Dallas, TX. Not the official site.">
 <meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1d2b34">
+<meta property="og:title" content="Arrington Roofing | Dallas Roofing (Cinematic Concept Demo)">
+<meta property="og:description" content="Cinematic concept demo of a new website for Arrington Roofing, Dallas, TX. Not the official site.">
+<meta property="og:url" content="https://helloleonidadecode-design.github.io/jarvis-demos/arrington-cinematic/">
+<meta property="og:image" content="https://helloleonidadecode-design.github.io/jarvis-demos/arrington-cinematic/assets/poster.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d2b34'/%3E%3Cpath d='M5 17 16 7l11 10' fill='none' stroke='%23f2b558' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 20.5h14M9 25h14' stroke='%23b9c6cc' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=IBM+Plex+Mono:wght@500&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 :root{
-  --canvas:#0b1424;--panel:#13213a;--accent:#d98a4a;--accent-hover:#e9a066;--accent-muted:#8f5a2f;
-  --text-primary:#f6f1ea;--text-secondary:#c9d2e0;--line:rgba(255,255,255,.16);--ink-on-accent:#0b1424;
-  --disp:'Fraunces',Georgia,serif;--body:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  --canvas:#1d2b34;--panel:#2a3e4a;--deep:#15202a;--wash:#e4eaec;--wash-2:#eef2f2;
+  --accent:#f2b558;--accent-hover:#f7c877;--accent-muted:rgba(242,181,88,.28);--copper:#9b4d2b;
+  --text-primary:#eef2f2;--text-secondary:#b9c6cc;--ink:#1b2830;--ink-2:#44555e;--rain:#9fd0e6;
+  --acc:#f2b558;--accink:#1d2b34;--bg:#eef2f2;
+  --disp:'Archivo','Arial Black',system-ui,sans-serif;--body:'Public Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;
+  --e-out:cubic-bezier(.22,1,.36,1);--e-io:cubic-bezier(.65,0,.35,1);
+  --tshadow:0 1px 2px rgba(5,10,14,.95),0 3px 12px rgba(5,10,14,.78),0 10px 44px rgba(5,10,14,.8);
+  --gut:clamp(1rem,5vw,6rem);--hdr:6.5rem;
+  --tab-h:1.45rem;--tab-w:7rem;
+  --tabmask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M3.5 0H96.5V7Q96.5 10 93.5 10H6.5Q3.5 10 3.5 7Z'/%3E%3C/svg%3E");
 }
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--canvas);color:var(--text-primary);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+html{font-size:clamp(16px,calc(9px + .6vw),32px);overflow-x:hidden;overflow-x:clip;scroll-padding-top:calc(var(--hdr) + 1rem);scroll-behavior:smooth;background:var(--canvas)}
+body{margin:0;overflow-x:hidden;overflow-x:clip;background:var(--canvas);color:var(--text-primary);font:400 1rem/1.6 var(--body);-webkit-font-smoothing:antialiased;animation:pagein .5s var(--e-out) both}
+@keyframes pagein{from{opacity:0}to{opacity:1}}
+*,*::before,*::after{box-sizing:border-box}
+img,svg{display:block;max-width:100%}
 a{color:inherit}
-.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--ink-on-accent);padding:10px 14px;border-radius:6px;z-index:100}
-.skip:focus{left:8px}
-:focus-visible{outline:3px solid var(--accent-hover);outline-offset:3px}
-.wrap{width:min(1100px,100% - 32px);margin-inline:auto}
-.demo-bar{background:var(--accent);color:var(--ink-on-accent);font-size:13px;font-weight:600;text-align:center;padding:8px 44px 8px 16px;position:relative;z-index:60}
-.demo-bar button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:inherit;font-size:20px;cursor:pointer;padding:4px 10px}
-header.top{position:fixed;left:0;right:0;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px max(16px,calc((100% - 1100px)/2));transition:background .3s}
-header.top.solid{background:rgba(11,20,36,.92);backdrop-filter:blur(8px)}
-.demo-on header.top{top:var(--bar,36px)}
-.logo{font:700 20px var(--disp);text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-nav ul{display:flex;gap:22px;list-style:none;padding:0}
-nav a{text-decoration:none;font-weight:600;font-size:15px;text-shadow:0 1px 6px rgba(0,0,0,.7)}
-nav a:hover{text-decoration:underline}
-.menu{display:none;background:rgba(11,20,36,.7);border:2px solid var(--text-primary);color:var(--text-primary);border-radius:8px;padding:8px 12px;font:600 14px var(--body);cursor:pointer}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:var(--ink-on-accent);border:2px solid var(--accent);border-radius:10px;padding:13px 24px;font:700 16px var(--body);text-decoration:none;min-height:48px;cursor:pointer}
-.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
-.btn.ghost{background:transparent;color:var(--text-primary);border-color:var(--text-primary)}
-.btn.ghost:hover{background:rgba(255,255,255,.12)}
-.mono{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-hover)}
+h1,h2,h3{margin:0;font-family:var(--disp);font-stretch:125%;font-weight:800;line-height:1.04;letter-spacing:-.012em}
+p{margin:0}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:1rem;top:-10rem;z-index:100;padding:.7rem 1rem;background:var(--accent);color:var(--canvas);font-weight:600;border-radius:.4rem;text-decoration:none}
+.skip:focus{top:1rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;box-shadow:0 0 0 9px var(--canvas);border-radius:.25rem}
+main:focus{outline:none}
+.wrap{width:min(78rem,100% - 2*var(--gut));margin-inline:auto}
+.mono{font-family:var(--mono);font-weight:500}
 
-/* scroll stage */
-.stage{position:relative;height:420vh}
-.pin{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--canvas)}
-.pin video,.pin .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.still{background:center/cover no-repeat url(assets/poster.jpg);display:none}
-/* 4-layer scrim */
-.scrim{position:absolute;inset:0;pointer-events:none}
-.s1{background:linear-gradient(90deg,rgba(8,16,32,.88) 0%,rgba(8,16,32,.78) 38%,rgba(8,16,32,.25) 72%,rgba(8,16,32,0) 100%)}
-.s2{background:linear-gradient(0deg,rgba(8,16,32,.7) 0%,rgba(8,16,32,0) 38%)}
-.s3{background:linear-gradient(180deg,rgba(8,16,32,.6) 0%,rgba(8,16,32,0) 24%)}
-.s4{background:radial-gradient(120% 90% at 20% 50%,rgba(8,16,32,.35),rgba(8,16,32,0) 70%)}
-.bands{position:absolute;inset:0;display:flex;align-items:center}
-.band{position:absolute;left:max(16px,calc((100% - 1100px)/2));width:min(560px,calc(100% - 32px));opacity:0;transform:translateY(24px);text-shadow:0 2px 18px rgba(0,0,0,.65);will-change:opacity,transform}
-.band h1,.band h2{font:600 clamp(36px,5.6vw,68px)/1.05 var(--disp);letter-spacing:-.015em;margin:10px 0 14px}
-.band p.sub{font-size:clamp(17px,2vw,20px);color:var(--text-primary);max-width:46ch}
-.band .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-.progress{position:absolute;right:max(16px,calc((100% - 1100px)/2));bottom:28px;display:flex;gap:8px}
-.progress i{width:34px;height:3px;background:rgba(255,255,255,.3);border-radius:2px;transition:background .2s}
-.progress i.on{background:var(--accent)}
-.ai-note{position:absolute;left:max(16px,calc((100% - 1100px)/2));bottom:20px;font-size:12px;color:var(--text-secondary);max-width:44ch;text-shadow:0 1px 6px rgba(0,0,0,.8)}
-.cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font:500 11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary);animation:bob 2.4s ease-in-out infinite}
-@keyframes bob{50%{transform:translate(-50%,6px)}}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:2.9rem;padding:.7rem 1.3rem;border:1px solid transparent;border-radius:.4rem;background:var(--accent);color:var(--canvas);font:600 1rem/1.15 var(--body);text-decoration:none;text-shadow:none;cursor:pointer;transition:background-color .25s var(--e-out),transform .25s var(--e-out),border-color .25s var(--e-out)}
+.btn:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.btn.ghost{background:rgba(8,14,20,.5);color:var(--text-primary);border-color:rgba(238,242,242,.6)}
+.btn.ghost:hover{background:rgba(8,14,20,.72);border-color:var(--text-primary)}
+.btn.sm{min-height:2.5rem;padding:.5rem 1rem;font-size:.92rem}
+.tlink{display:inline-flex;align-items:baseline;gap:.4em;font-weight:600;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:.1rem;transition:gap .25s var(--e-out)}
+.tlink:hover{gap:.7em}
+@media (pointer:coarse){.btn,.tlink,.top a,.menu{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
 
-/* static-hero mode: phones, portrait tablets, coarse portrait, landscape phones, reduced motion */
-.static .stage{height:auto}
-.static .pin{position:relative;height:auto;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 90px}
-.static .pin video{display:none}
-.static .still{display:block}
-.static .bands{position:relative;inset:auto;display:block}
-.static .band{position:relative;left:auto;width:min(560px,calc(100% - 32px));margin-inline:max(16px,calc((100% - 1100px)/2));opacity:1;transform:none;display:none}
-.static .band[data-static="show"]{display:block}
-.static .band[data-final]{display:block;margin-top:28px}
-.static .progress,.static .cue{display:none}
-.static .s1{background:linear-gradient(180deg,rgba(8,16,32,.5),rgba(8,16,32,.82))}
-
-/* below the fold */
-section.block{padding:84px 0}
-section.block h2{font:600 clamp(28px,4vw,44px)/1.1 var(--disp);margin:8px 0 14px}
-.lead{color:var(--text-secondary);max-width:60ch}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:30px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
-.card h3{font:600 21px var(--disp);margin-bottom:6px}.card p{color:var(--text-secondary);font-size:15px}
-.note{font-size:14px;color:var(--text-secondary);margin-top:18px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px;counter-reset:s;padding:0}
-.steps li{list-style:none;counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:62px 20px 20px;position:relative}
-.steps li::before{content:counter(s);position:absolute;left:20px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--ink-on-accent);display:grid;place-items:center;font:700 16px var(--disp)}
-.steps b{display:block;font:600 19px var(--disp);margin-bottom:2px}
-.proof{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:26px;padding:18px 0;border-block:1px solid var(--line)}
-.proof b{font:600 26px var(--disp);display:block}
-form.req{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:14px;max-width:640px}
-form.req label{font-weight:600;font-size:14px;display:grid;gap:6px}
-form.req input,form.req select,form.req textarea{font:inherit;padding:12px;border-radius:10px;border:1.5px solid #8ea0bd;background:var(--canvas);color:var(--text-primary);min-height:46px;width:100%}
-.privacy{font-size:13px;color:var(--text-secondary)}.status{font-weight:600;min-height:1.4em}
-footer{border-top:1px solid var(--line);padding:30px 0 90px;font-size:14px;color:var(--text-secondary)}
-.callbar{display:none}
-
-@media(max-width:860px){
-  .menu{display:inline-block}
-  nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:rgba(11,20,36,.97);flex-direction:column;gap:0;padding:8px 16px;border-bottom:1px solid var(--line)}
-  nav ul.open{display:flex}nav li a{display:block;padding:14px 4px}
-  section.block{padding:56px 0}
-  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--accent);padding:10px 16px;gap:10px}
-  .callbar a{flex:1;text-align:center;color:var(--ink-on-accent);font-weight:700;text-decoration:none;padding:12px;border-radius:8px;border:2px solid var(--ink-on-accent)}
+/* header */
+.top{position:fixed;inset:0 0 auto;z-index:50;color:var(--text-primary);transition:background-color .35s var(--e-out)}
+.top::before{content:"";position:absolute;inset:0 0 -2.5rem;z-index:-1;pointer-events:none;background:linear-gradient(rgba(12,20,26,.72),rgba(12,20,26,0));transition:opacity .35s var(--e-out)}
+.top.solid{background:rgba(21,32,42,.94)}
+.top.solid::before{opacity:0}
+.demo-bar{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding:.4rem var(--gut);background:#0f1a21;color:var(--text-secondary);font-size:.78rem;line-height:1.4}
+.demo-bar .x{flex:none;width:2rem;height:2rem;border:1px solid rgba(185,198,204,.45);border-radius:.3rem;background:none;color:var(--text-primary);font-size:1.1rem;line-height:1;cursor:pointer}
+.bar{display:flex;align-items:center;gap:1.5rem;padding:.75rem var(--gut)}
+.brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font:800 1rem/1 var(--disp);font-stretch:125%;letter-spacing:-.01em;text-shadow:0 1px 8px rgba(5,10,14,.6)}
+.brand .mark{width:1.9rem;height:1.9rem;flex:none}
+.nav{margin-left:auto;position:static}
+.nav ul{display:flex;gap:1.7rem;margin:0;padding:0;list-style:none}
+.nav a{font-size:.92rem;font-weight:600;text-decoration:none;text-shadow:0 1px 8px rgba(5,10,14,.7);opacity:.92;transition:opacity .2s}
+.nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:.3em}
+.menu{display:none;align-items:center;gap:.5rem;padding:.45rem .85rem;border:1px solid rgba(238,242,242,.5);border-radius:.4rem;background:rgba(8,14,20,.35);color:var(--text-primary);font:600 .92rem/1 var(--body);cursor:pointer}
+.mi{width:1rem;height:.7rem;background:linear-gradient(currentColor 0 0) top/100% 2px no-repeat,linear-gradient(currentColor 0 0) center/100% 2px no-repeat,linear-gradient(currentColor 0 0) bottom/100% 2px no-repeat}
+.acts{display:flex;align-items:center;gap:1.2rem}
+.hcall{font-weight:600;font-size:.92rem;text-decoration:none;text-shadow:0 1px 8px rgba(5,10,14,.7);white-space:nowrap}
+.hcall:hover{text-decoration:underline;text-underline-offset:.3em}
+@media (max-width:1099px){
+  .menu{display:inline-flex}
+  .nav ul{display:none}
+  .top.open .nav ul{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;padding:.5rem var(--gut) 1.2rem;background:var(--deep);box-shadow:0 18px 30px -18px rgba(0,0,0,.6)}
+  .top.open .nav li a{display:block;padding:.8rem 0;border-bottom:1px solid rgba(185,198,204,.16);font-size:1rem}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cue{animation:none}*{transition:none!important}}
+@media (max-width:720px){
+  .top{background:var(--deep)}
+  .top::before{display:none}
+  .acts{display:none}
+  .demo-bar{font-size:.74rem}
+}
+
+/* hero: scrub stage */
+.hero{position:relative;background:var(--canvas)}
+.stage{position:relative;height:560vh}
+.pin{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--canvas)}
+.poster{position:absolute;inset:0;background:center/cover no-repeat var(--canvas)}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:translateZ(0);transition:opacity .8s var(--e-out)}
+.stage.video-ready video{opacity:1}
+.stage.video-failed video{display:none}
+.scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(10,16,22,.6) 0%,rgba(10,16,22,0) 24%),radial-gradient(ellipse 120% 90% at 50% 45%,rgba(10,16,22,0) 35%,rgba(10,16,22,.62) 100%)}
+.band{position:absolute;left:var(--gut);top:calc(var(--hdr) + 3vh);width:min(52rem,60vw);opacity:0;isolation:isolate;pointer-events:none;text-shadow:var(--tshadow);color:var(--text-primary)}
+.band::before{content:"";position:absolute;inset:-22% -18% -30% -14%;z-index:-1;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 72% 64% at 38% 44%,rgba(8,13,18,var(--pk,.66)) 0%,rgba(8,13,18,calc(var(--pk,.66)*.66)) 46%,rgba(8,13,18,0) 76%)}
+.b1{--pk:.72}.b4{--pk:.7}
+.kick{display:inline-flex;align-items:center;gap:.7em;padding:.45rem .85rem;border-radius:99px;background:rgba(8,14,20,.55);border:1px solid rgba(185,198,204,.28);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font:500 .78rem/1.2 var(--mono);letter-spacing:.07em;text-transform:uppercase;text-shadow:0 1px 3px rgba(5,10,14,.85)}
+.kick .ct{color:var(--accent)}
+.band .kick{opacity:clamp(0,calc(var(--k,0)*4),1)}
+.band .hl{margin-top:1.1rem;font-size:clamp(2.3rem,3.7vw,6.2rem);max-width:15ch}
+.plate{display:block;width:fit-content;padding:.6rem .9rem;border-radius:.4rem;background:rgba(8,13,18,.62);border:1px solid rgba(185,198,204,.16);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.band .sub{margin-top:1.1rem;font-size:clamp(1.05rem,1.3vw,2.6rem);line-height:1.45;max-width:38ch;--ks:clamp(0,calc((var(--k,0) - .45)*2.6),1);opacity:var(--ks);transform:translateY(calc((1 - var(--ks))*.6rem))}
+.band .w{display:inline-block}
+.fx-drift .w{--kc:clamp(0,calc((var(--k,0) - var(--th,0))*2.8),1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*-.6em))}
+.fx-lay .w{--kc:clamp(0,calc((var(--k,0) - var(--th,0))*3),1);opacity:var(--kc);transform:translateX(calc((1 - var(--kc))*-1.4em))}
+.fx-rise .w{--kc:clamp(0,calc((var(--k,0) - var(--th,0))*3),1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*.55em))}
+.bl{display:grid}
+.bl>span{grid-area:1/1}
+.bl .soft{filter:blur(10px);opacity:calc(1 - var(--k,0))}
+.bl .sharp{opacity:var(--k,0)}
+.rule{display:block;width:min(24rem,70%);height:5px;margin-top:1.1rem;transform-origin:left;transform:scaleX(var(--k,0));background:repeating-linear-gradient(90deg,rgba(238,242,242,.75) 0 calc(33.3% - 4px),transparent calc(33.3% - 4px) 33.3%);box-shadow:0 1px 6px rgba(5,10,14,.6)}
+.b4 .sub{--ks:clamp(0,calc((var(--k,0) - .62)*4),1)}
+.ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem;--kb:clamp(0,calc((var(--k,0) - .76)*5),1);opacity:var(--kb);transform:translateY(calc((1 - var(--kb))*.7rem))}
+.band.on .ctas{pointer-events:auto}
+.sentinel{position:absolute;left:0;bottom:0;width:1px;height:1px;pointer-events:none}
+.chip{position:absolute;padding:.4rem .75rem;border-radius:.45rem;background:rgba(8,14,20,.55);border:1px solid rgba(96,110,126,.35);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:.75rem;line-height:1.35;color:var(--text-secondary);text-shadow:0 1px 3px rgba(5,10,14,.85)}
+.ai{left:var(--gut);bottom:1.4rem;max-width:min(26rem,60vw)}
+.cue{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;transition:opacity .5s var(--e-out)}
+.cue.gone{opacity:0;pointer-events:none}
+.cue .lbl{font:500 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);text-shadow:var(--tshadow)}
+.cue .chev{width:1.1rem;height:1.1rem;border-right:2px solid var(--text-primary);border-bottom:2px solid var(--text-primary);transform:rotate(45deg);animation:nudge 4.2s var(--e-io) -1.2s infinite}
+@keyframes nudge{0%,100%{transform:translateY(0) rotate(45deg);opacity:.55}50%{transform:translateY(.35rem) rotate(45deg);opacity:1}}
+.skipfilm{font-size:.8rem;font-weight:600;color:var(--text-primary);text-shadow:var(--tshadow)}
+@media (max-height:560px){.cue,.ai{display:none}}
+
+/* hero: static composition */
+.static-hero{display:none;position:relative}
+.static-hero .shotwrap{position:absolute;inset:0}
+.static-hero .shot{position:absolute;inset:0;background:url(assets/poster.jpg) center/cover no-repeat var(--canvas)}
+.static-hero .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,22,.62) 0%,rgba(10,16,22,0) 30%),radial-gradient(ellipse 80% 70% at 22% 30%,rgba(8,13,18,.7) 0%,rgba(8,13,18,.35) 50%,rgba(8,13,18,0) 78%)}
+.static-hero .copy{position:relative;z-index:2;padding:calc(var(--hdr) + 5vh) var(--gut) 6rem;text-shadow:var(--tshadow)}
+.static-hero .hl{margin-top:1.1rem;font-size:clamp(2.3rem,5vw,5.4rem);max-width:15ch}
+.static-hero .sub{margin-top:1.1rem;font-size:clamp(1.05rem,1.6vw,2.4rem);line-height:1.45;max-width:38ch}
+.static-hero .ctas{opacity:1;transform:none}
+html:not(.js) .stage{display:none}
+html:not(.js) .static-hero{display:block;min-height:100vh}
+@media (max-width: 720px), (orientation: portrait) and (max-width: 1024px), (orientation: portrait) and (pointer: coarse), (orientation: landscape) and (pointer: coarse) and (max-height: 560px), (prefers-reduced-motion: reduce){
+  .stage{display:none}
+  .static-hero{display:block;min-height:100vh;min-height:100svh}
+}
+@media (max-width:720px){
+  .static-hero{min-height:0;padding-top:var(--hdr);background:var(--canvas)}
+  .static-hero .shotwrap{position:relative;inset:auto;aspect-ratio:4/3}
+  .static-hero .shot{background-position:42% 50%;
+    -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - var(--tab-h) + 1px) no-repeat,var(--tabmask) 0 100%/var(--tab-w) var(--tab-h) repeat-x;
+    mask:linear-gradient(#000 0 0) top/100% calc(100% - var(--tab-h) + 1px) no-repeat,var(--tabmask) 0 100%/var(--tab-w) var(--tab-h) repeat-x}
+  .static-hero .shot::after{display:none}
+  .static-hero .copy{padding:1.6rem var(--gut) 3rem;text-shadow:none}
+  .static-hero .plate{padding:0;background:none;border:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .static-hero .chip{left:.75rem;bottom:calc(var(--tab-h) + .6rem);right:auto;max-width:calc(100% - 1.5rem)}
+}
+
+/* the signature: shingle-tab edges, each section laps the next */
+.tabbed{position:relative}
+.tabbed::after{content:"";position:absolute;left:0;right:0;top:calc(100% - 1px);height:var(--tab-h);z-index:3;pointer-events:none;background:linear-gradient(var(--tab-c) calc(100% - 4px),var(--tab-line) 0);-webkit-mask:var(--tabmask) var(--tab-x,0px) 0/var(--tab-w) 100% repeat-x;mask:var(--tabmask) var(--tab-x,0px) 0/var(--tab-w) 100% repeat-x}
+.stage.tabbed,.static-hero.tabbed{--tab-c:var(--canvas);--tab-line:#101a21;--tab-x:calc(var(--tab-w)/2)}
+.sec{position:relative;padding:calc(5.5rem + var(--tab-h)) 0 5.5rem}
+.on-light{color:var(--ink)}
+.on-light :focus-visible{box-shadow:0 0 0 9px var(--canvas)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:1rem 3rem;align-items:end;margin-bottom:3rem}
+.sec-head h2{font-size:clamp(2rem,3.3vw,5.2rem);max-width:18ch}
+.kick-l,.kick-d{grid-column:1/-1;font:500 .8rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.kick-l{color:var(--copper)}
+.kick-d{color:var(--accent)}
+.note{font-size:.95rem;max-width:44ch}
+.on-light .note{color:var(--ink-2)}
+.sec .note{align-self:end}
+
+/* reveals */
+.js .rv>.st{opacity:0;transform:translateY(1.2rem);transition:opacity .7s var(--e-out),transform .9s var(--e-out)}
+.js .rv.in>.st{opacity:1;transform:none}
+.js .rv.in>.st:nth-child(2){transition-delay:.09s}
+.js .rv.in>.st:nth-child(3){transition-delay:.18s}
+.js .rv.in>.st:nth-child(4){transition-delay:.27s}
+.js .rv.in>.st:nth-child(5){transition-delay:.36s}
+.js .rv.in.done>.st:nth-child(n){transition-delay:0s}
+
+/* services: laid as courses */
+.svc{background:var(--wash);--tab-c:var(--wash);--tab-line:#c3ced3}
+.courses{list-style:none;margin:0;padding:0}
+.courses>li{position:relative;display:grid;grid-template-columns:4.5rem minmax(0,22rem) minmax(0,1fr);gap:.5rem 2rem;align-items:baseline;margin-left:var(--ind,0);margin-right:calc(3rem - var(--ind,0));padding:1.6rem 1.8rem calc(1.6rem + .8rem);background:var(--wash-2);border-top:1px solid #d3dce0}
+.courses>li+li{margin-top:-.2rem}
+.courses>li:nth-child(even){--ind:3rem}
+.courses>li:nth-child(1){z-index:4}.courses>li:nth-child(2){z-index:3}.courses>li:nth-child(3){z-index:2}.courses>li:nth-child(4){z-index:1}
+.courses>li::after{content:"";position:absolute;left:0;right:0;top:calc(100% - 1px);height:.8rem;background:linear-gradient(var(--wash-2) calc(100% - 3px),#b4c1c7 0);-webkit-mask:var(--tabmask) var(--cx,0px) 0/5rem 100% repeat-x;mask:var(--tabmask) var(--cx,0px) 0/5rem 100% repeat-x}
+.courses>li:nth-child(even)::after{--cx:2.5rem}
+.courses .num{font:500 .9rem/1 var(--mono);color:var(--copper);letter-spacing:.08em}
+.courses h3{font-size:clamp(1.25rem,1.6vw,2.5rem)}
+.courses p{color:var(--ink-2);max-width:44ch}
+.js .courses.rv>.st{transform:translateX(-2.5rem)}
+.js .courses.rv.in>.st{transform:none}
+.sec-cta{margin-top:3rem}
+
+/* run the rain */
+.rain{background:var(--canvas);--tab-c:var(--canvas);--tab-line:#101a21;--tab-x:calc(var(--tab-w)/2);--p:0}
+.rain-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:3rem 4rem;align-items:center}
+.rain-fig{position:relative;margin:0}
+.rain-fig svg{width:100%;height:auto;overflow:visible}
+.rain h2{font-size:clamp(2rem,3.3vw,5.2rem);margin-top:1rem;max-width:14ch}
+.rain .lede{margin-top:1.1rem;color:var(--text-secondary);max-width:42ch}
+.hold{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:3.3rem;margin-top:1.6rem;padding:.8rem 1.6rem;overflow:hidden;border:2px solid var(--accent);border-radius:.45rem;background:var(--panel);color:var(--text-primary);font:600 1rem/1.1 var(--body);cursor:pointer;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;transition:transform .2s var(--e-out)}
+.hold .fillbar{position:absolute;inset:0;background:rgba(242,181,88,.35);transform-origin:left;transform:scaleX(var(--p,0))}
+.hold .lbl{position:relative}
+.hold.holding{transform:scale(.98)}
+.hold:disabled{cursor:default;opacity:1}
+.rstat{min-height:1.6em;margin-top:.9rem;font-weight:600;color:var(--text-primary)}
+.check-h{margin-top:1.6rem;font-family:var(--body);font-stretch:100%;font-size:1rem;font-weight:600;letter-spacing:0}
+.check{list-style:none;margin:.8rem 0 0;padding:0;display:grid;gap:.55rem}
+.check li{position:relative;padding-left:1.7rem;opacity:.55;transition:opacity .6s var(--e-out)}
+.check li::before{content:"";position:absolute;left:0;top:.45em;width:.95rem;height:.6rem;border-radius:.1rem;background:var(--text-secondary);-webkit-mask:var(--tabmask) 0 0/50% 100% repeat-x;mask:var(--tabmask) 0 0/50% 100% repeat-x}
+.rain.done .check li{opacity:1}
+.rain.done .check li::before{background:var(--accent)}
+.rain.done .check li:nth-child(2){transition-delay:.15s}.rain.done .check li:nth-child(3){transition-delay:.3s}.rain.done .check li:nth-child(4){transition-delay:.45s}.rain.done .check li:nth-child(5){transition-delay:.6s}
+.rain .tlink{margin-top:1.8rem;color:var(--accent)}
+/* cross-section drawing, all driven by --p */
+.drop{--q:clamp(0,calc((var(--p,0) - var(--t0,0))/.34),1);transform:translateX(calc(var(--q)*var(--len,500px)));opacity:calc(clamp(0,calc(var(--q)*12),1)*(1 - clamp(0,calc((var(--q) - .9)*10),1)))}
+.leak{opacity:clamp(0,calc((var(--p,0) - .5 - var(--s,0)*.08)*8),1)}
+.drip{opacity:calc(clamp(0,calc((var(--p,0) - .8)*12),1)*(1 - clamp(0,calc((var(--p,0) - .95)*20),1)));transform:translateY(calc(clamp(0,calc((var(--p,0) - .82)/.14),1)*110px))}
+.stain{opacity:clamp(0,calc((var(--p,0) - .93)*14),1)}
+.gapmark{opacity:calc(.4 + .6*clamp(0,calc((var(--p,0) - .35)*5),1))}
+.lab{font-size:17px}
+.drz line{opacity:.2}
+.rain.live .drz line{animation:drz 4.6s linear infinite}
+.rain.live .drz line:nth-child(2n){animation-delay:-1.7s}.rain.live .drz line:nth-child(3n){animation-delay:-3.1s}.rain.live .drz line:nth-child(5n){animation-delay:-.8s}
+@keyframes drz{0%{transform:translateY(-14px);opacity:0}20%{opacity:.24}80%{opacity:.24}100%{transform:translateY(46px);opacity:0}}
+
+/* process */
+.proc{background:var(--wash-2);--tab-c:var(--wash-2);--tab-line:#c9d3d7}
+.steps{position:relative;list-style:none;margin:0;padding:3.6rem 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem}
+.steps::before{content:"";position:absolute;left:0;right:0;top:2.2rem;height:5px;background:repeating-linear-gradient(90deg,var(--ink) 0 calc(33.333% - 6px),transparent calc(33.333% - 6px) 33.333%);transform-origin:left;transform:scaleX(1);transition:transform 1.2s var(--e-io)}
+.js .steps.rv::before{transform:scaleX(0)}
+.js .steps.rv.in::before{transform:scaleX(1)}
+.steps .n{position:absolute;top:-3.6rem;left:0;font:500 1.6rem/1 var(--mono);color:var(--copper);letter-spacing:.04em}
+.steps li{position:relative}
+.steps h3{font-size:clamp(1.25rem,1.6vw,2.5rem);margin-top:.4rem}
+.steps p{margin-top:.6rem;color:var(--ink-2);max-width:34ch}
+
+/* ratings */
+.rate{background:var(--canvas);--tab-c:var(--canvas);--tab-line:#101a21;--tab-x:calc(var(--tab-w)/2)}
+.rate .note{color:var(--text-secondary)}
+.bento{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:auto auto;gap:1.2rem}
+.card{position:relative;padding:1.6rem 1.8rem 1.7rem;background:var(--panel);border-radius:.6rem;border:1px solid rgba(185,198,204,.14)}
+.card.big{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem;padding:2rem 2.2rem}
+.mk{font:500 .78rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.fig{margin-top:.8rem;font:800 clamp(3rem,5vw,8rem)/.95 var(--disp);font-stretch:125%;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.card.big .fig{font-size:clamp(5rem,9vw,14rem)}
+.cap{margin-top:.5rem;color:var(--text-secondary);font-size:.95rem}
+.stars{position:relative;width:min(16rem,80%);aspect-ratio:5/1;background:rgba(238,242,242,.16);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24'%3E%3Cg id='s'%3E%3Cpath d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3C/g%3E%3Cpath transform='translate(24)' d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3Cpath transform='translate(48)' d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3Cpath transform='translate(72)' d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3Cpath transform='translate(96)' d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24'%3E%3Cg id='s'%3E%3Cpath d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3C/g%3E%3Cpath transform='translate(24)' d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3Cpath transform='translate(48)' d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3Cpath transform='translate(72)' d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3Cpath transform='translate(96)' d='M12 1L14.82 8.12L22.46 8.6L16.57 13.48L18.47 20.9L12 16.8L5.53 20.9L7.43 13.48L1.54 8.6L9.18 8.12Z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+.stars .fill{position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(.98)}
+.js .bento.rv .stars .fill{transform:scaleX(0);transition:transform 1.4s var(--e-out) .3s}
+.js .bento.rv.in .stars .fill{transform:scaleX(.98)}
+.card .glow{position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px var(--accent-muted),0 0 40px -10px var(--accent-muted);opacity:0}
+.rate.live .card.big .glow{animation:glow 6s ease-in-out -2s infinite}
+@keyframes glow{0%,100%{opacity:0}50%{opacity:1}}
+.rate .tlink{margin-top:2.6rem;color:var(--accent)}
+
+/* request */
+.req{background:var(--wash);--tab-c:var(--wash);--tab-line:#c3ced3}
+.req-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3rem 5rem;align-items:start}
+.req h2{font-size:clamp(2.4rem,4.2vw,6.4rem);max-width:10ch;margin-top:1rem}
+.pitch p.st{margin-top:1.2rem;color:var(--ink-2);max-width:36ch;font-size:1.05rem}
+.pitch a{font-weight:600;color:var(--ink)}
+.formcard{padding:2rem;background:var(--wash-2);border-radius:.6rem;border:1px solid #cbd5d9;box-shadow:0 30px 60px -40px rgba(27,40,48,.45)}
+.field{display:grid;gap:.4rem;margin-bottom:1.1rem}
+.field label{font-weight:600;font-size:.95rem}
+.field input,.field select,.field textarea{width:100%;min-height:2.9rem;padding:.65rem .8rem;border:1px solid #6f8089;border-radius:.4rem;background:#fff;color:var(--ink);font:400 1rem/1.4 var(--body)}
+.field textarea{min-height:6rem;resize:vertical}
+.hint{font-size:.88rem;color:var(--ink-2)}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:3px solid var(--accent);outline-offset:1px;box-shadow:0 0 0 7px var(--canvas)}
+.status{min-height:1.5em;margin-top:.9rem;font-weight:600}
+.privacy{margin-top:.8rem;font-size:.85rem;color:var(--ink-2)}
+
+/* footer, call bar, environment */
+.foot{background:var(--deep);color:var(--text-secondary);padding:calc(3.5rem + var(--tab-h)) 0 3.5rem}
+.foot .wrap{display:grid;grid-template-columns:auto 1fr;gap:1.2rem 3rem;align-items:baseline}
+.foot .brand{color:var(--text-primary);text-shadow:none}
+.foot .meta{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;justify-content:flex-end}
+.foot .meta a{color:var(--text-primary);font-weight:600}
+.foot .disc{grid-column:1/-1;font-size:.85rem;max-width:80ch;padding-top:1.2rem;border-top:1px solid rgba(185,198,204,.18)}
+.callbar{display:none}
+@media (orientation: landscape) and (pointer: coarse) and (max-height: 560px){
+  .top{position:absolute}
+  .acts{display:none}
+  .demo-bar{font-size:.72rem}
+}
+@media (max-width:720px), (orientation: landscape) and (pointer: coarse) and (max-height: 560px){
+  body{padding-bottom:4.5rem}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--deep);box-shadow:0 -10px 24px -12px rgba(0,0,0,.6)}
+  .callbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:.4rem;font-weight:600;text-decoration:none}
+  .callbar a:first-child{border:1px solid rgba(238,242,242,.6);color:var(--text-primary)}
+  .callbar a:last-child{background:var(--accent);color:var(--canvas)}
+}
+.grain{position:fixed;inset:-50%;z-index:70;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:drift 90s linear -20s infinite}
+@keyframes drift{0%,100%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+
+/* layout steps */
+@media (max-width:1000px){
+  .sec-head{grid-template-columns:1fr}
+  .rain-grid,.req-grid{grid-template-columns:1fr}
+  .courses>li{grid-template-columns:3.2rem minmax(0,1fr);margin-right:calc(1.2rem - var(--ind,0))}
+  .courses>li:nth-child(even){--ind:1.2rem}
+  .courses>li p{grid-column:2}
+}
+@media (max-width:720px){
+  :root{--tab-w:5.5rem;--tab-h:1.2rem}
+  .rain-fig .lab{font-size:26px}
+  .sec{padding:calc(3.8rem + var(--tab-h)) 0 3.8rem}
+  .steps{grid-template-columns:1fr;padding-top:0;gap:2.2rem}
+  .steps::before{display:none}
+  .steps .n{position:static;display:block;margin-bottom:.3rem}
+  .bento{grid-template-columns:1fr}
+  .card.big{grid-row:auto}
+  .courses>li{padding:1.2rem 1.1rem 1.9rem}
+  .foot .wrap{grid-template-columns:1fr}
+  .foot .meta{justify-content:flex-start}
+  .formcard{padding:1.3rem}
+}
+
+/* reduced motion: every state final, nothing moves */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
+  .js .rv>.st,.js .courses.rv>.st{opacity:1!important;transform:none!important}
+  .js .steps.rv::before{transform:scaleX(1)!important}
+  .js .bento.rv .stars .fill{transform:scaleX(.98)!important}
+  .rain{--p:1!important}
+  .rain .check li{opacity:1!important}
+  .rain .check li::before{background:var(--accent)!important}
+}
 </style>
 </head>
-<body class="demo-on">
+<body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="demo-bar" id="demobar">Cinematic concept for Arrington Roofing. Not the official site and not live. Ratings and contact details are from public listings (Nov 2026).<button type="button" aria-label="Dismiss demo notice" onclick="document.body.classList.remove('demo-on');this.parentElement.remove()">&times;</button></div>
-<header class="top" id="top"><a class="logo" href="#">Arrington Roofing</a>
-<nav aria-label="Primary"><ul id="nav"><li><a href="#services">Services</a></li><li><a href="#process">How it works</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#request">Estimate</a></li></ul></nav>
-<button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button></header>
 
-<main id="main">
-<div class="stage" id="stage">
-  <div class="pin">
-    <video id="hv" muted playsinline preload="auto" poster="assets/poster.jpg" aria-hidden="true" tabindex="-1"><source src="assets/hero.mp4" type="video/mp4"></video>
-    <div class="still" aria-hidden="true"></div>
-    <div class="scrim s1"></div><div class="scrim s2"></div><div class="scrim s3"></div><div class="scrim s4"></div>
-    <div class="bands">
-      <div class="band" data-in="0" data-out="0.27" data-static="show"><p class="mono">Dallas, TX roofing</p><h1>Dallas roofing, after the storm.</h1><p class="sub">Arrington Roofing is rated 4.9 by 367 Google reviewers.</p></div>
-      <div class="band" data-in="0.30" data-out="0.55"><p class="mono">After hail or wind</p><h2>A roof shows quickly whether it held.</h2><p class="sub">A careful look beats guessing, and it is easier to ask before the next storm.</p></div>
-      <div class="band" data-in="0.58" data-out="0.82"><p class="mono">In writing</p><h2>Tell us what you saw. Get it checked.</h2><p class="sub">Describe the stain, the leak or the missing shingle and request an estimate.</p></div>
-      <div class="band" data-in="0.86" data-out="1.01" data-final="1"><p class="mono">Ready when you are</p><h2>Request your estimate.</h2><p class="sub">One short form, or call and talk to a person.</p><div class="row"><a class="btn" href="#request">Request an estimate</a><a class="btn ghost" href="tel:+14696219622">Call (469) 621-9622</a></div></div>
-    </div>
-    <div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-    <p class="ai-note">Concept footage: an AI-generated scene, not an Arrington project.</p>
-    <div class="cue" aria-hidden="true">Scroll</div>
+<header class="top" id="hdr">
+  <div class="demo-bar"><p>Cinematic concept for Arrington Roofing. Not the official site and not live. Ratings and contact details are from public listings (Nov 2026).</p><button type="button" class="x" aria-label="Dismiss demo notice">&times;</button></div>
+  <div class="bar">
+    <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1d2b34"/><path d="M5 17 16 7l11 10" fill="none" stroke="#f2b558" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 20.5h14M9 25h14" stroke="#b9c6cc" stroke-width="2.2" stroke-linecap="round"/></svg><span>Arrington Roofing</span></a>
+    <nav class="nav" aria-label="Sections">
+      <button class="menu" type="button" aria-expanded="false" aria-controls="navlist"><span class="mi" aria-hidden="true"></span>Menu</button>
+      <ul id="navlist">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#rain">Why one shingle matters</a></li>
+        <li><a href="#process">How it works</a></li>
+        <li><a href="#ratings">Ratings</a></li>
+      </ul>
+    </nav>
+    <div class="acts"><a class="hcall" href="tel:+14696219622">Call (469) 621-9622</a><a class="btn sm" href="#request">Request an estimate</a></div>
   </div>
-</div>
+</header>
 
-<section class="block" id="services"><div class="wrap"><p class="mono">Services</p><h2>What Arrington Roofing can help with</h2><p class="lead">Typical roofing work for Dallas. <em>This list is a starting point to confirm with the owner before launch.</em></p>
-<div class="cards"><div class="card"><h3>Roof repair</h3><p>Leaks, missing shingles and flashing problems found and fixed.</p></div><div class="card"><h3>Roof replacement</h3><p>A full tear-off and new roof when repair no longer makes sense.</p></div><div class="card"><h3>Storm damage inspection</h3><p>A close look after hail or wind, with photos you can keep.</p></div><div class="card"><h3>Estimates</h3><p>A written estimate before any work starts.</p></div></div></div></section>
+<main id="main" tabindex="-1">
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="stage tabbed">
+    <div class="pin">
+      <div class="poster" aria-hidden="true"></div>
+      <video id="film" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+      <div class="scrim" aria-hidden="true"></div>
 
-<section class="block" id="process"><div class="wrap"><p class="mono">How it works</p><h2>Three steps, no surprises</h2>
-<ol class="steps"><li><b>Tell us what you see</b>A stain, a leak, a shingle in the yard. A sentence is enough.</li><li><b>We look at the roof</b>Someone from the team inspects it and explains what they find.</li><li><b>You get it in writing</b>A clear estimate. You decide, with no pressure.</li></ol></div></section>
+      <div class="band b1" data-a="0" data-b="0.22">
+        <p class="kick"><span class="ct">01 / 04</span> <span>Dallas, TX roofing</span></p>
+        <h1 class="hl split fx-drift">Dallas roofing, after the storm.</h1>
+        <p class="sub plate">Arrington Roofing is rated 4.9 by 367 Google reviewers.</p>
+      </div>
+      <div class="band b2" data-a="0.25" data-b="0.48" data-ramp="0.04">
+        <p class="kick"><span class="ct">02 / 04</span> <span>After hail or wind</span></p>
+        <h2 class="hl split fx-blur">A roof shows quickly whether it held.</h2>
+        <p class="sub plate">A careful look beats guessing, and it is easier to ask before the next storm.</p>
+      </div>
+      <div class="band b3" data-a="0.51" data-b="0.73" data-ramp="0.04">
+        <p class="kick"><span class="ct">03 / 04</span> <span>Course by course</span></p>
+        <h2 class="hl split fx-lay">Every course covers the one below it.</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p class="sub plate">When one lifts or goes missing, water finds the gap. Describe the stain, the leak or the missing shingle and request an estimate.</p>
+      </div>
+      <div class="band b4" data-a="0.77" data-b="1" data-ramp="0.04">
+        <p class="kick"><span class="ct">04 / 04</span> <span>Ready when you are</span></p>
+        <h2 class="hl split fx-rise">Request your estimate.</h2>
+        <p class="sub plate">One short form, or call and talk to a person.</p>
+        <p class="ctas" aria-hidden="true"><a class="btn" href="#request" tabindex="-1">Request an estimate</a><a class="btn ghost" href="tel:+14696219622" tabindex="-1">Call (469) 621-9622</a></p>
+      </div>
 
-<section class="block" id="reviews"><div class="wrap"><p class="mono">Reputation</p><h2>What the public ratings show</h2><p class="lead">Ratings come from public listings, last checked Nov 2026. Review text is not reproduced here; a live site would show real reviews with permission.</p>
-<div class="proof"><span><b>4.9</b>Google rating</span><span><b>367</b>Google reviews</span><span><b>4.5 (18)</b>Yelp</span></div></div></section>
+      <p class="chip ai">Concept footage: an AI-generated scene, not an Arrington project.</p>
+      <div class="cue"><a class="skipfilm" href="#services">Skip the film</a><span class="lbl" aria-hidden="true">Scroll</span><span class="chev" aria-hidden="true"></span></div>
+    </div>
+    <i class="sentinel" aria-hidden="true"></i>
+  </div>
 
-<section class="block" id="request"><div class="wrap">
-<form class="req" id="reqform" novalidate>
-  <h2 style="margin:0;font-size:28px">Request an estimate</h2>
-  <label>Your name<input name="n" autocomplete="name" required></label>
-  <label>Phone<input name="p" type="tel" autocomplete="tel" required></label>
-  <label>What do you need?<select name="k"><option>Leak or repair</option><option>Full replacement</option><option>Storm damage check</option><option>Not sure yet</option></select></label>
-  <label>Details<textarea name="d" rows="3"></textarea></label>
-  <button class="btn" type="submit">Send request</button>
-  <p class="status" role="status" aria-live="polite"></p>
-  <p class="privacy"><strong>Privacy:</strong> Your name, phone and request would be used only to answer you and would be shared with Arrington Roofing, never sold. This demo stores and sends nothing.</p>
-</form></div></section>
+  <div class="static-hero tabbed">
+    <div class="shotwrap">
+      <div class="shot" aria-hidden="true"></div>
+      <p class="chip ai">Concept footage: an AI-generated scene, not an Arrington project.</p>
+    </div>
+    <div class="copy">
+      <p class="kick"><span>Dallas, TX roofing</span></p>
+      <h1 class="hl">Dallas roofing, after the storm.</h1>
+      <p class="sub plate">Arrington Roofing is rated 4.9 by 367 Google reviewers.</p>
+      <p class="ctas"><a class="btn" href="#request">Request an estimate</a><a class="btn ghost" href="tel:+14696219622">Call (469) 621-9622</a></p>
+    </div>
+    <i class="sentinel" aria-hidden="true"></i>
+  </div>
+</section>
+
+<section class="sec svc on-light tabbed" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <p class="kick-l st">Services</p>
+      <h2 id="svc-h" class="st">What Arrington Roofing can help with</h2>
+      <p class="note st">Typical roofing work for Dallas. This list is a starting point to confirm with the owner before launch.</p>
+    </header>
+    <ol class="courses rv">
+      <li class="st"><span class="num">01</span><h3>Roof repair</h3><p>Leaks, missing shingles and flashing problems found and fixed.</p></li>
+      <li class="st"><span class="num">02</span><h3>Roof replacement</h3><p>A full tear-off and new roof when repair no longer makes sense.</p></li>
+      <li class="st"><span class="num">03</span><h3>Storm damage inspection</h3><p>A close look after hail or wind, and a plain account of what held.</p></li>
+      <li class="st"><span class="num">04</span><h3>Estimates</h3><p>A written estimate before any work starts.</p></li>
+    </ol>
+    <p class="sec-cta"><a class="tlink" href="#request">Request an estimate <span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+<section class="sec rain tabbed" id="rain" aria-labelledby="rain-h">
+  <div class="wrap rain-grid">
+    <figure class="rain-fig">
+      <svg viewBox="0 0 600 420" role="img" aria-labelledby="rain-svg-t">
+        <title id="rain-svg-t">Cross-section of a shingle roof: six overlapping courses, one with its tab missing and two nail heads showing, a ceiling below.</title>
+        <g class="drz" stroke="#9fd0e6" stroke-width="2.4" stroke-linecap="round"><line x1="80" y1="4" x2="73" y2="24"/><line x1="130" y1="22" x2="123" y2="42"/><line x1="186" y1="0" x2="179" y2="20"/><line x1="240" y1="30" x2="233" y2="50"/><line x1="296" y1="8" x2="289" y2="28"/><line x1="352" y1="34" x2="345" y2="54"/><line x1="404" y1="14" x2="397" y2="34"/><line x1="458" y1="46" x2="451" y2="66"/><line x1="512" y1="22" x2="505" y2="42"/><line x1="560" y1="60" x2="553" y2="80"/><line x1="108" y1="52" x2="101" y2="72"/><line x1="486" y1="92" x2="479" y2="112"/><line x1="560" y1="120" x2="553" y2="140"/><line x1="530" y1="150" x2="523" y2="170"/></g>
+        <rect x="20" y="332" width="560" height="12" rx="3" fill="#33505f"/>
+        <text x="22" y="376" fill="#b9c6cc" class="lab" font-family="IBM Plex Mono, monospace" letter-spacing="1.5">CEILING</text>
+        <ellipse class="stain" cx="338" cy="338" rx="38" ry="7" fill="#9fd0e6" fill-opacity=".6"/>
+        <circle class="drip" cx="338" cy="214" r="7" fill="#9fd0e6"/>
+        <g transform="translate(30 60) rotate(22)">
+          <rect x="-10" y="0" width="580" height="16" fill="#4f6a79"/>
+          <rect x="-10" y="-2.5" width="580" height="2.5" fill="#8aa2ad"/>
+          <g class="leak" style="--s:0"><path d="M300 -12 L300 -4" stroke="#9fd0e6" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+          <rect x="460" y="-14" width="100" height="14" fill="#7a4b34" stroke="#b8774c" stroke-width="1.2" transform="rotate(-4.45 460 0)"/>
+          <rect x="368" y="-14" width="180" height="14" fill="#7a4b34" stroke="#b8774c" stroke-width="1.2" transform="rotate(-4.45 368 0)"/>
+          <g transform="rotate(-4.45 276 0)">
+            <rect x="276" y="-14" width="180" height="14" fill="#7a4b34" stroke="#b8774c" stroke-width="1.2"/>
+            <circle cx="300" cy="-14" r="4" fill="#0f1a21"/><circle cx="340" cy="-14" r="4" fill="#0f1a21"/>
+          </g>
+          <polygon points="184,-14 262,-14 269,-9 260,-6 267,0 184,0" fill="#7a4b34" stroke="#b8774c" stroke-width="1.2" transform="rotate(-4.45 184 0)"/>
+          <rect x="92" y="-14" width="180" height="14" fill="#7a4b34" stroke="#b8774c" stroke-width="1.2" transform="rotate(-4.45 92 0)"/>
+          <rect x="0" y="-14" width="180" height="14" fill="#7a4b34" stroke="#b8774c" stroke-width="1.2" transform="rotate(-4.45 0 0)"/>
+          <g class="leak" style="--s:1"><path d="M300 -2 L334 -1.5" stroke="#9fd0e6" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+          <g class="leak" style="--s:2"><path d="M334 -1 L336 16" stroke="#9fd0e6" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+          <g class="leak" style="--s:3"><path d="M336 16 L342 20" stroke="#9fd0e6" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+          <circle class="gapmark" cx="318" cy="-24" r="40" fill="none" stroke="#f2b558" stroke-width="2.6" stroke-dasharray="7 6"/>
+          <g fill="#9fd0e6">
+            <rect class="drop" x="4" y="-38" width="18" height="6" rx="3" style="--t0:0;--len:560px"/>
+            <rect class="drop" x="4" y="-38" width="18" height="6" rx="3" style="--t0:0.06;--len:560px"/>
+            <rect class="drop" x="4" y="-38" width="18" height="6" rx="3" style="--t0:0.12;--len:298px"/>
+            <rect class="drop" x="4" y="-38" width="18" height="6" rx="3" style="--t0:0.18;--len:560px"/>
+            <rect class="drop" x="4" y="-38" width="18" height="6" rx="3" style="--t0:0.24;--len:560px"/>
+            <rect class="drop" x="4" y="-38" width="18" height="6" rx="3" style="--t0:0.3;--len:298px"/>
+            <rect class="drop" x="4" y="-38" width="18" height="6" rx="3" style="--t0:0.36;--len:560px"/>
+            <rect class="drop" x="4" y="-38" width="18" height="6" rx="3" style="--t0:0.42;--len:560px"/>
+          </g>
+        </g>
+        <text class="gapmark lab" x="382" y="122" fill="#f2b558" font-family="IBM Plex Mono, monospace" letter-spacing="1.5">MISSING TAB</text>
+      </svg>
+    </figure>
+    <div class="rain-copy rv">
+      <p class="kick-d st">Why one shingle matters</p>
+      <h2 id="rain-h" class="st">Water follows the courses.</h2>
+      <p class="lede st" id="rain-help">Rain runs from each course onto the one below. Where a shingle has lifted or gone missing, water can get underneath instead. Hold the button to watch it happen.</p>
+      <div class="st">
+        <button class="hold" id="hold" type="button" aria-describedby="rain-help"><span class="fillbar" aria-hidden="true"></span><span class="lbl">Hold to run the rain</span></button>
+        <p class="rstat" id="rain-status" role="status" aria-live="polite"></p>
+      </div>
+      <div class="st">
+        <h3 class="check-h">After hail or wind, look from the ground</h3>
+        <ul class="check">
+          <li>Shingles or pieces of shingle in the yard</li>
+          <li>Granules collecting at the downspouts</li>
+          <li>Dents in gutters, vents or flashing</li>
+          <li>A new stain on a ceiling or wall</li>
+          <li>Stay off the roof. Ask for an inspection instead.</li>
+        </ul>
+        <a class="tlink" href="#request">Request an estimate <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec proc on-light tabbed" id="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <p class="kick-l st">How it works</p>
+      <h2 id="proc-h" class="st">Three steps, no surprises</h2>
+      <p class="note st">How a request usually runs. These steps are a starting point to confirm with the owner before launch.</p>
+    </header>
+    <ol class="steps rv">
+      <li class="st"><span class="n">01</span><h3>Tell us what you see</h3><p>A stain, a leak, a shingle in the yard. A sentence is enough.</p></li>
+      <li class="st"><span class="n">02</span><h3>We look at the roof</h3><p>Someone from the team inspects it and explains what they find.</p></li>
+      <li class="st"><span class="n">03</span><h3>You get it in writing</h3><p>A clear estimate. You decide, with no pressure.</p></li>
+    </ol>
+    <p class="sec-cta"><a class="tlink" href="#request">Request an estimate <span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+<section class="sec rate tabbed" id="ratings" aria-labelledby="rate-h">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <p class="kick-d st">Reputation</p>
+      <h2 id="rate-h" class="st">What the public ratings show</h2>
+      <p class="note st">Ratings come from public listings, last checked Nov 2026. Review text is not reproduced here; a live site would show real reviews with permission.</p>
+    </header>
+    <div class="bento rv">
+      <article class="card big st">
+        <span class="glow" aria-hidden="true"></span>
+        <div><p class="mk">Google rating</p><p class="fig"><span class="vh">4.9 out of 5</span><span aria-hidden="true" data-count="4.9" data-dec="1">4.9</span></p></div>
+        <div><div class="stars" aria-hidden="true"><span class="fill"></span></div><p class="cap">Average across 367 public Google reviews</p></div>
+      </article>
+      <article class="card st">
+        <p class="mk">Google reviews</p><p class="fig"><span class="vh">367</span><span aria-hidden="true" data-count="367" data-dec="0">367</span></p><p class="cap">Public reviews on Google, Nov 2026</p>
+      </article>
+      <article class="card st">
+        <p class="mk">Yelp</p><p class="fig"><span class="vh">4.5 out of 5</span><span aria-hidden="true" data-count="4.5" data-dec="1">4.5</span></p><p class="cap">from 18 reviews</p>
+      </article>
+    </div>
+    <a class="tlink" href="#request">Request an estimate <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+
+<section class="sec req on-light tabbed" id="request" aria-labelledby="req-h">
+  <div class="wrap req-grid">
+    <div class="pitch rv">
+      <p class="kick-l st">Estimate</p>
+      <h2 id="req-h" class="st">Request your estimate</h2>
+      <p class="st">Serving Dallas, TX. Exact service area to confirm with the owner.</p>
+      <p class="st">Prefer to talk? <a href="tel:+14696219622">Call (469) 621-9622</a>.</p>
+    </div>
+    <form class="formcard" id="reqform">
+      <div class="field"><label for="n">Your name</label><input id="n" name="n" autocomplete="name" required></div>
+      <div class="field"><label for="p">Phone</label><input id="p" name="p" type="tel" autocomplete="tel" required></div>
+      <div class="field"><label for="k">What do you need?</label><select id="k" name="k"><option>Leak or repair</option><option>Full replacement</option><option>Storm damage check</option><option>Not sure yet</option></select></div>
+      <div class="field"><label for="d">Details</label><span class="hint" id="d-hint">For example: a stain, a leak, a shingle in the yard.</span><textarea id="d" name="d" aria-describedby="d-hint"></textarea></div>
+      <button class="btn" type="submit">Send request</button>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="privacy"><strong>Privacy:</strong> This demo stores and sends nothing. On the live site, your name, phone and request would go only to Arrington Roofing, to answer you.</p>
+    </form>
+  </div>
+</section>
 </main>
 
-<footer><div class="wrap"><p>Concept demo, not affiliated with Arrington Roofing. Ratings as listed publicly in Nov 2026. Services and service area to confirm with the business. Hero footage is AI-generated.</p></div></footer>
-<div class="callbar"><a href="tel:+14696219622">Call</a><a href="#request">Estimate</a></div>
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#2a3e4a"/><path d="M5 17 16 7l11 10" fill="none" stroke="#f2b558" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 20.5h14M9 25h14" stroke="#b9c6cc" stroke-width="2.2" stroke-linecap="round"/></svg><span>Arrington Roofing</span></a>
+    <p class="meta"><span>Dallas, TX</span><a href="tel:+14696219622">(469) 621-9622</a></p>
+    <p class="disc">Concept demo, not affiliated with Arrington Roofing. Ratings as listed publicly in Nov 2026. Services, process and service area to confirm with the business. Hero footage is AI-generated.</p>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Quick contact"><a href="tel:+14696219622">Call</a><a href="#request">Estimate</a></nav>
+<div class="grain" aria-hidden="true"></div>
 
 <script>
-(function(){
-  var root=document.documentElement, stage=document.getElementById('stage'), v=document.getElementById('hv'),
-      bands=[].slice.call(document.querySelectorAll('.band')), dots=[].slice.call(document.querySelectorAll('.progress i')),
-      top=document.getElementById('top');
-  /* five static-hero gates; every one stays live in both directions */
-  var Q=['(max-width:720px)','(max-width:1024px) and (orientation:portrait)','(pointer:coarse) and (orientation:portrait)','(orientation:landscape) and (max-height:560px)','(prefers-reduced-motion:reduce)'].map(function(q){return window.matchMedia(q)});
-  var videoBad=false, ticking=false, dur=0;
-  function isStatic(){return videoBad||Q.some(function(m){return m.matches})}
-  function apply(){
-    var s=isStatic(); root.classList.toggle('static',s);
-    if(s){bands.forEach(function(b){b.style.opacity='';b.style.transform=''});try{v.pause()}catch(e){}}
-    else{update()}
-  }
-  Q.forEach(function(m){ if(m.addEventListener)m.addEventListener('change',apply); else m.addListener(apply)});
-  function bar(){var d=document.getElementById('demobar');root.style.setProperty('--bar',(d?d.offsetHeight:0)+'px')}
-  bar(); window.addEventListener('resize',bar);
-  function ease(t){return t<0?0:t>1?1:t*t*(3-2*t)}
-  function update(){
-    ticking=false;
-    top.classList.toggle('solid',window.scrollY>window.innerHeight*0.2);
-    var bd=document.getElementById('demobar'); top.style.top=Math.max(0,(bd?bd.offsetHeight:0)-window.scrollY)+'px';
-    if(isStatic())return;
-    var r=stage.getBoundingClientRect(), total=stage.offsetHeight-window.innerHeight;
-    var p=Math.min(1,Math.max(0,-r.top/total));
-    if(dur&&v.readyState>=2){var t=p*(dur-0.05); if(Math.abs(v.currentTime-t)>0.03)v.currentTime=t}
-    var active=-1;
-    bands.forEach(function(b,i){
-      var a=+b.dataset.in, z=+b.dataset.out, f=0.04;
-      var o=ease((p-a)/f)*(1-ease((p-(z-f))/f)); if(i===0&&p<z-f)o=Math.max(o,p<0.02?1:o);
-      b.style.opacity=o.toFixed(3); b.style.transform='translateY('+((1-o)*24).toFixed(1)+'px)';
-      b.style.pointerEvents=o>0.6?'auto':'none'; if(o>0.5)active=i;
-    });
-    dots.forEach(function(d,i){d.classList.toggle('on',i===active)});
-  }
-  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
-  window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll);
-  v.addEventListener('loadedmetadata',function(){dur=v.duration;update()});
-  v.addEventListener('error',function(){videoBad=true;apply()});
-  v.querySelector('source').addEventListener('error',function(){videoBad=true;apply()});
-  apply();
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const root = document.documentElement, body = document.body;
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  const smoothstep = (p, e0, e1) => { const t = clamp((p - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+  const RM = matchMedia('(prefers-reduced-motion: reduce)');
 
-  /* nav */
-  var b=document.querySelector('.menu'), n=document.getElementById('nav');
-  function close(){n.classList.remove('open');b.setAttribute('aria-expanded','false')}
-  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
-  n.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){close();b.focus()}});
-  /* form (demo) */
-  var f=document.getElementById('reqform'), s=f.querySelector('.status');
-  f.addEventListener('submit',function(e){e.preventDefault();
-    if(!f.n.value.trim()||!f.p.value.trim()){s.textContent='Please add your name and phone number.';return}
-    s.textContent='Demo only: nothing was sent. Live, this would reach Arrington Roofing and confirm by text.';f.reset()});
+  /* header: height token, demo bar, menu, solid after the hero */
+  const hdr = $('#hdr');
+  const setHdr = () => root.style.setProperty('--hdr', hdr.offsetHeight + 'px');
+  new ResizeObserver(setHdr).observe(hdr); setHdr();
+  $('.demo-bar .x').addEventListener('click', e => e.currentTarget.closest('.demo-bar').remove());
+  const menu = $('.menu');
+  const setMenu = open => { menu.setAttribute('aria-expanded', String(open)); hdr.classList.toggle('open', open); };
+  menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
+  $('#navlist').addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && hdr.classList.contains('open')) { setMenu(false); menu.focus(); } });
+  const ends = new Map();
+  const endIO = new IntersectionObserver(es => { es.forEach(e => ends.set(e.target, e.isIntersecting || e.boundingClientRect.top < 0)); hdr.classList.toggle('solid', [...ends.values()].some(Boolean)); });
+  $$('.sentinel').forEach(el => endIO.observe(el));
+
+  /* split headlines once, with a seeded generator */
+  function rng(seed) { let s = seed >>> 0; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
+  $$('.band .split').forEach((el, bi) => {
+    const text = el.textContent.trim(), r = rng(101 + bi * 37), words = text.split(/\s+/);
+    el.textContent = '';
+    const vh = document.createElement('span'); vh.className = 'vh'; vh.textContent = text;
+    const vis = document.createElement('span'); vis.setAttribute('aria-hidden', 'true');
+    if (el.classList.contains('fx-blur')) {
+      vis.className = 'bl';
+      ['soft', 'sharp'].forEach(c => { const s = document.createElement('span'); s.className = c; s.textContent = text; vis.append(s); });
+    } else {
+      const spread = el.classList.contains('fx-rise') ? .4 : el.classList.contains('fx-lay') ? .55 : .5;
+      words.forEach((w, i) => {
+        const s = document.createElement('span'); s.className = 'w'; s.textContent = w;
+        s.style.setProperty('--th', (i / words.length * spread + r() * .06).toFixed(3));
+        vis.append(s); if (i < words.length - 1) vis.append(' ');
+      });
+    }
+    el.append(vh, vis);
+  });
+
+  /* the scrub: blob fetch, lerp, gated seeks, delta-gated bands */
+  const VIDEO_URL = 'assets/hero.mp4', POSTER_URL = 'assets/poster.jpg';
+  const stage = $('.stage'), film = $('#film'), poster = $('.poster'), cue = $('.cue');
+  const bands = $$('.band').map((el, i, all) => ({ el, a: +el.dataset.a, b: +el.dataset.b, ramp: +(el.dataset.ramp || 0), first: i === 0, last: i === all.length - 1, op: -1, k: -1, on: null }));
+  let target = 0, shown = 0, rafId = null, lastTick = 0, heroOnScreen = false, scrubOn = false, loadK = 0, loadRaf = null, cueOn = null;
+
+  function heroProgress() {
+    const range = stage.offsetHeight - innerHeight;
+    return range > 0 ? clamp(-stage.getBoundingClientRect().top / range, 0, 1) : 0;
+  }
+  function updateCaptions(p) {
+    for (const B of bands) {
+      const f = Math.min(0.02, (B.b - B.a) / 3);
+      const op = (B.first ? 1 : smoothstep(p, B.a, B.a + f)) * (B.last ? 1 : 1 - smoothstep(p, B.b - f, B.b));
+      let k = clamp((p - B.a) / (B.ramp || Math.min(0.025, (B.b - B.a) * 0.35)), 0, 1);
+      if (B.first) k = Math.max(k, loadK);
+      if (Math.abs(op - B.op) >= 0.004 || ((op === 0 || op === 1) && op !== B.op)) {
+        B.op = op; B.el.style.opacity = op.toFixed(3);
+        const on = op > 0.5; if (on !== B.on) { B.on = on; B.el.classList.toggle('on', on); }
+      }
+      if (Math.abs(k - B.k) >= 0.008 || ((k === 0 || k === 1) && k !== B.k)) { B.k = k; B.el.style.setProperty('--k', k.toFixed(3)); }
+    }
+    const c = p < 0.03; if (c !== cueOn) { cueOn = c; cue.classList.toggle('gone', !c); }
+  }
+  let seekBusy = false, pendingTime = null;
+  function requestSeek(t) {
+    if (!film.duration) return;
+    if (seekBusy) { pendingTime = t; return; }
+    seekBusy = true; film.currentTime = t;
+  }
+  film.addEventListener('seeked', () => { seekBusy = false; if (pendingTime !== null) { const t = pendingTime; pendingTime = null; requestSeek(t); } });
+  film.addEventListener('error', () => { seekBusy = false; pendingTime = null; if (film.getAttribute('src')) failVideo(); });
+  function tick(now) {
+    const dt = Math.min(100, now - (lastTick || now)); lastTick = now;
+    shown += (target - shown) * (1 - Math.pow(1 - 0.16, dt / 16.667));
+    if (Math.abs(target - shown) < 0.0005) { shown = target; rafId = null; lastTick = 0; }
+    else rafId = requestAnimationFrame(tick);
+    requestSeek(shown * film.duration);
+    updateCaptions(shown);
+  }
+  function onScroll() {
+    target = heroProgress();
+    if (rafId === null && heroOnScreen && scrubOn) rafId = requestAnimationFrame(tick);
+  }
+  new IntersectionObserver(([e]) => { heroOnScreen = e.isIntersecting; if (heroOnScreen && scrubOn) onScroll(); }).observe(stage);
+
+  let heroInit = false;
+  function initHeroOnce() {
+    if (heroInit) return; heroInit = true;
+    poster.style.backgroundImage = "url('" + POSTER_URL + "')";
+    let started = false;
+    const start = () => { if (started) return; started = true; loadFilm().catch(failVideo); };
+    const img = new Image(); img.onload = start; img.onerror = start; img.src = POSTER_URL;
+    setTimeout(start, 4000);
+  }
+  async function loadFilm() {
+    const ctrl = new AbortController(), watchdog = setTimeout(() => ctrl.abort(), 20000);
+    try {
+      const res = await fetch(VIDEO_URL, { priority: 'low', signal: ctrl.signal });
+      if (!res.ok) throw new Error('video ' + res.status);
+      film.src = URL.createObjectURL(await res.blob());
+    } finally { clearTimeout(watchdog); }
+    film.addEventListener('canplay', () => { requestSeek(shown * film.duration); stage.classList.add('video-ready'); }, { once: true });
+    film.load();
+  }
+  function failVideo() { stage.classList.add('video-failed'); }
+  function runLoadRamp() {
+    if (loadK >= 1 || loadRaf) return;
+    let t0 = 0;
+    const step = now => {
+      if (!t0) t0 = now + 250;
+      const t = clamp((now - t0) / 1100, 0, 1);
+      loadK = 1 - Math.pow(1 - t, 3);
+      updateCaptions(shown);
+      loadRaf = (t < 1 && scrubOn) ? requestAnimationFrame(step) : null;
+    };
+    loadRaf = requestAnimationFrame(step);
+  }
+
+  const GATES = [
+    '(max-width: 720px)',
+    '(orientation: portrait) and (max-width: 1024px)',
+    '(orientation: portrait) and (pointer: coarse)',
+    '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+    '(prefers-reduced-motion: reduce)'
+  ];
+  function enableScrub() {
+    if (scrubOn) return; scrubOn = true;
+    initHeroOnce();
+    addEventListener('scroll', onScroll, { passive: true });
+    bands.forEach(b => { b.op = -1; b.k = -1; b.on = null; }); cueOn = null;
+    unpinFinalStates();
+    target = shown = heroProgress();
+    updateCaptions(shown);
+    onScroll();
+    runLoadRamp();
+  }
+  function disableScrub() {
+    if (!scrubOn) return; scrubOn = false;
+    removeEventListener('scroll', onScroll);
+    if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; lastTick = 0; }
+    if (loadRaf) { cancelAnimationFrame(loadRaf); loadRaf = null; }
+    loadK = 1;
+  }
+  function applyHeroMode() { if (GATES.some(q => matchMedia(q).matches)) disableScrub(); else enableScrub(); }
+
+  /* the one interactive moment: hold to run the rain */
+  const rain = $('#rain'), hold = $('#hold'), holdLbl = $('#hold .lbl'), rstat = $('#rain-status');
+  const rainState = { p: 0, holding: false, done: false, raf: null, last: 0, written: -1, pinned: false };
+  function rainWrite() {
+    const R = rainState;
+    if (Math.abs(R.p - R.written) >= 0.004 || ((R.p === 0 || R.p === 1) && R.p !== R.written)) { R.written = R.p; rain.style.setProperty('--p', R.p.toFixed(3)); }
+  }
+  function rainStep(now) {
+    const R = rainState, dt = Math.min(64, now - (R.last || now)); R.last = now;
+    if (R.holding) R.p = Math.min(1, R.p + dt / 2600);
+    else R.p = Math.max(0, R.p - dt / 1500 * (0.35 + R.p));
+    rainWrite();
+    if (R.p >= 1 && !R.done) rainComplete();
+    if ((R.holding && R.p < 1) || (!R.holding && R.p > 0 && !R.done)) R.raf = requestAnimationFrame(rainStep);
+    else { R.raf = null; R.last = 0; }
+  }
+  function rainComplete() {
+    const R = rainState; R.done = true; R.holding = false; R.p = 1; rainWrite();
+    hold.classList.remove('holding'); rain.classList.add('done');
+    holdLbl.textContent = 'Run it again';
+    rstat.textContent = 'The water found the gap. Here is what to look for from the ground.';
+  }
+  function startHold(e) {
+    const R = rainState;
+    if (RM.matches || hold.disabled) return;
+    if (e) e.preventDefault();
+    if (R.done) { R.done = false; R.p = 0; rainWrite(); rain.classList.remove('done'); rstat.textContent = ''; }
+    R.holding = true; hold.classList.add('holding'); holdLbl.textContent = 'Keep holding';
+    if (!R.raf) { R.last = 0; R.raf = requestAnimationFrame(rainStep); }
+  }
+  function endHold() {
+    const R = rainState; if (!R.holding) return;
+    R.holding = false; hold.classList.remove('holding');
+    if (!R.done) { holdLbl.textContent = 'Hold to run the rain'; if (!R.raf) { R.last = 0; R.raf = requestAnimationFrame(rainStep); } }
+  }
+  hold.addEventListener('pointerdown', e => { if (e.button !== 0) return; try { hold.setPointerCapture(e.pointerId); } catch (_) {} startHold(e); });
+  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(t => hold.addEventListener(t, endHold));
+  hold.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') ) { e.preventDefault(); if (!e.repeat) startHold(); } });
+  hold.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') endHold(); });
+  hold.addEventListener('contextmenu', e => e.preventDefault());
+
+  /* counters */
+  const counters = $$('[data-count]').map(el => ({ el, to: +el.dataset.count, dec: +el.dataset.dec, played: false, pinned: false, raf: null }));
+  const fmt = (C, v) => v.toFixed(C.dec);
+  function playCounter(C) {
+    if (C.played) return; C.played = true;
+    if (RM.matches) { C.el.textContent = fmt(C, C.to); return; }
+    let t0 = 0, last = '';
+    const step = now => {
+      if (!t0) t0 = now;
+      const t = clamp((now - t0) / 1300, 0, 1), s = fmt(C, C.to * (1 - Math.pow(1 - t, 3)));
+      if (s !== last) { last = s; C.el.textContent = s; }
+      C.raf = t < 1 ? requestAnimationFrame(step) : null;
+    };
+    C.raf = requestAnimationFrame(step);
+  }
+  if (!RM.matches) counters.forEach(C => { C.el.textContent = fmt(C, 0); });
+
+  /* reduced motion, live in both directions */
+  let pinned = false;
+  function pinToFinalStates() {
+    pinned = true;
+    disableScrub();
+    const R = rainState;
+    if (R.raf) { cancelAnimationFrame(R.raf); R.raf = null; }
+    R.pinned = !R.done; R.holding = false; R.done = true; R.p = 1; rainWrite();
+    rain.classList.add('done'); hold.classList.remove('holding'); hold.disabled = true;
+    holdLbl.textContent = 'Leak path shown';
+    counters.forEach(C => { if (C.raf) { cancelAnimationFrame(C.raf); C.raf = null; } if (!C.played) C.pinned = true; C.el.textContent = fmt(C, C.to); });
+  }
+  function unpinFinalStates() {
+    if (!pinned) return; pinned = false;
+    const R = rainState; hold.disabled = false;
+    if (R.pinned) { R.pinned = false; R.done = false; R.p = 0; rainWrite(); rain.classList.remove('done'); holdLbl.textContent = 'Hold to run the rain'; rstat.textContent = ''; }
+    else holdLbl.textContent = 'Run it again';
+    counters.forEach(C => { if (C.pinned && !C.played) C.el.textContent = fmt(C, 0); C.pinned = false; });
+  }
+
+  /* entrances, living loops, hidden-tab pause */
+  const revealIO = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target; el.classList.add('in'); revealIO.unobserve(el);
+    setTimeout(() => el.classList.add('done'), 1400);
+    if (el.classList.contains('bento')) counters.forEach(playCounter);
+  }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  $$('.rv').forEach(el => revealIO.observe(el));
+  const liveIO = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('live', e.isIntersecting)));
+  $$('#rain, #ratings').forEach(el => liveIO.observe(el));
+  document.addEventListener('visibilitychange', () => body.classList.toggle('paused', document.hidden));
+
+  /* form: demo only */
+  const form = $('#reqform'), fstat = form.querySelector('.status');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fstat.textContent = 'Demo only: nothing was sent. On the live site this request would go to Arrington Roofing.';
+    form.reset();
+  });
+
+  /* wire the gates last */
+  const MQLS = GATES.map(q => matchMedia(q));
+  MQLS.forEach(m => m.addEventListener('change', applyHeroMode));
+  RM.addEventListener('change', e => { if (e.matches) pinToFinalStates(); else { unpinFinalStates(); applyHeroMode(); } });
+  if (RM.matches) pinToFinalStates();
+  applyHeroMode();
 })();
 </script>
+<script type="application/json" id="chat-config">
+{"business": "Arrington Roofing", "phone": "(469) 621-9622", "city": "Dallas", "trade": "roofing", "services": ["Roof repair", "Roof replacement", "Storm damage inspection", "Estimates"], "bottom": 88}
+</script>
+<script src="../assets/chat-widget.js" defer></script>
 </body>
 </html>
