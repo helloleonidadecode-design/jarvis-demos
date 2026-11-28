@@ -18,37 +18,37 @@
   var PANEL_ID = 'tfc-chat-panel';
   var LAUNCH_ID = 'tfc-chat-launch';
   var INPUT_ID = 'tfc-chat-input';
-  var NOTE = 'Demo assistant with scripted answers. It sends nothing.';
+  var NOTE = 'Scripted demo. It sends nothing.'; // one line at 16px, even 320px wide
   var SHORT = 500; // viewport height (px) below which the panel goes full height; matches the CSS media query below
 
   var CSS = [
     '[hidden]{display:none !important}',
-    '.tfc-launch{position:fixed;right:16px;bottom:16px;z-index:2147483000;box-sizing:border-box;max-width:calc(100vw - 32px);padding:12px 18px;border:2px solid transparent;border-radius:999px;background:var(--acc,#1f4e79);color:var(--accink,#ffffff);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;font-weight:600;line-height:1.2;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25)}',
+    '.tfc-launch{position:fixed;right:16px;bottom:16px;z-index:2147483000;box-sizing:border-box;max-width:calc(100vw - 32px);padding:12px 18px;border:2px solid transparent;border-radius:999px;background:var(--acc,#1f4e79);color:var(--accink,#ffffff);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;font-weight:600;line-height:1.2;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25)}',
     // Phones: a round 50px launcher (its text stays as the accessible name) so it does not cover page buttons.
     '@media (max-width: 720px){.tfc-launch{width:50px;height:50px;padding:0;font-size:0;line-height:0}.tfc-launch::before{content:"";display:block;width:22px;height:17px;margin:0 auto;border:2.5px solid currentColor;border-radius:8px 8px 8px 2px}}',
-    '.tfc-panel{position:fixed;right:16px;bottom:72px;z-index:2147483000;box-sizing:border-box;width:min(360px,calc(100vw - 24px));max-height:min(560px,calc(100vh - 100px));display:flex;flex-direction:column;overflow:hidden;background:var(--bg,#ffffff);color:var(--ink,#1c2024);border:1px solid rgba(0,0,0,.2);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.4;animation:tfc-in .18s ease-out}',
+    '.tfc-panel{position:fixed;right:16px;bottom:72px;z-index:2147483000;box-sizing:border-box;width:min(360px,calc(100vw - 24px));max-height:min(560px,calc(100vh - 100px));display:flex;flex-direction:column;overflow:hidden;background:var(--bg,#ffffff);color:var(--ink,#1c2024);border:1px solid rgba(0,0,0,.2);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.4;animation:tfc-in .18s ease-out}',
     '.tfc-panel:focus{outline:none}',
-    '.tfc-note{margin:0;padding:8px 12px;font-size:12px;background:rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.1)}',
+    '.tfc-note{margin:0;padding:8px 12px;font-size:16px;background:rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.1)}',
     '.tfc-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;background:var(--acc,#1f4e79);color:var(--accink,#ffffff)}',
     '.tfc-title{margin:0;font-size:16px;font-weight:700}',
     '.tfc-title:focus{outline:none}',
-    '.tfc-close{padding:4px 10px;border:1px solid var(--accink,#ffffff);border-radius:8px;background:transparent;color:var(--accink,#ffffff);font-family:inherit;font-size:13px;cursor:pointer}',
-    '.tfc-log{flex:1 1 auto;min-height:160px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:12px}',
+    '.tfc-close{padding:4px 10px;border:1px solid var(--accink,#ffffff);border-radius:8px;background:transparent;color:var(--accink,#ffffff);font-family:inherit;font-size:16px;cursor:pointer}',
+    '.tfc-log{flex:1 1 auto;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:12px}',
     '.tfc-msg{max-width:85%;padding:8px 11px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere}',
     '.tfc-bot{align-self:flex-start;background:rgba(0,0,0,.07)}',
     '.tfc-user{align-self:flex-end;background:var(--acc,#1f4e79);color:var(--accink,#ffffff)}',
     '.tfc-list{margin:6px 0 0;padding-left:18px}',
     '.tfc-tel{color:inherit;font-weight:700}',
     '.tfc-quick{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;border-top:1px solid rgba(0,0,0,.1)}',
-    '.tfc-chip{padding:6px 10px;border:1px solid var(--acc,#1f4e79);border-radius:999px;background:var(--bg,#ffffff);color:var(--ink,#1c2024);font-family:inherit;font-size:13px;cursor:pointer}',
+    '.tfc-chip{padding:6px 10px;border:1px solid var(--acc,#1f4e79);border-radius:999px;background:var(--bg,#ffffff);color:var(--ink,#1c2024);font-family:inherit;font-size:16px;cursor:pointer}',
     '.tfc-form{padding:8px 12px 12px;border-top:1px solid rgba(0,0,0,.1)}',
-    '.tfc-label{display:block;margin-bottom:4px;font-size:13px;font-weight:600}',
+    '.tfc-label{display:block;margin-bottom:4px;font-size:16px;font-weight:600}',
     '.tfc-row{display:flex;gap:6px}',
     // 16px: below that, iPhones zoom the whole page when the input takes focus.
     '.tfc-input{flex:1 1 auto;min-width:0;box-sizing:border-box;padding:9px 10px;border:1px solid rgba(0,0,0,.35);border-radius:8px;background:#ffffff;color:var(--ink,#1c2024);font-family:inherit;font-size:16px}',
-    // Short screens (see SHORT): quick replies in one row that scrolls sideways, and the log takes what is left.
-    '@media (max-height: 499.98px){.tfc-quick{flex-wrap:nowrap;overflow-x:auto}.tfc-chip{flex:none;white-space:nowrap}.tfc-log{min-height:0}}',
-    '.tfc-send{padding:9px 14px;border:0;border-radius:8px;background:var(--acc,#1f4e79);color:var(--accink,#ffffff);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}',
+    // Short screens (see SHORT): quick replies in one row that scrolls sideways.
+    '@media (max-height: 499.98px){.tfc-quick{flex-wrap:nowrap;overflow-x:auto}.tfc-chip{flex:none;white-space:nowrap}}',
+    '.tfc-send{padding:9px 14px;border:0;border-radius:8px;background:var(--acc,#1f4e79);color:var(--accink,#ffffff);font-family:inherit;font-size:16px;font-weight:600;cursor:pointer}',
     '.tfc-launch:focus-visible,.tfc-chip:focus-visible,.tfc-send:focus-visible,.tfc-input:focus-visible,.tfc-tel:focus-visible{outline:3px solid var(--ink,#1c2024);outline-offset:2px}',
     '.tfc-close:focus-visible{outline:3px solid var(--accink,#ffffff);outline-offset:2px}',
     '@keyframes tfc-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}',
@@ -118,6 +118,7 @@
       business: String(cfg.business || 'this business'),
       phone: String(cfg.phone || ''),
       city: String(cfg.city || ''),
+      state: String(cfg.state || 'TX'),
       trade: String(cfg.trade || ''),
       services: Array.isArray(cfg.services) ? cfg.services.map(String) : [],
       bottom: bottomPx(cfg.bottom)
@@ -180,6 +181,7 @@
     var panel = el('div', 'tfc-panel');
     panel.id = PANEL_ID;
     panel.setAttribute('role', 'dialog');
+    // While it is open the rest of the page is inert (see setInert); aria-modal is set there too.
     panel.setAttribute('aria-label', 'Demo chat assistant for ' + cfg.business);
     panel.tabIndex = -1;
     panel.hidden = true;
@@ -275,7 +277,9 @@
         b.appendChild(typeof p === 'string' ? document.createTextNode(p) : p);
       });
       log.appendChild(b);
-      log.scrollTop = log.scrollHeight;
+      // Show the new message from its first line: on a short screen it can be taller than the log.
+      // (scrollTop stops at the end, so a short message simply scrolls the log to the bottom.)
+      log.scrollTop += b.getBoundingClientRect().top - log.getBoundingClientRect().top - 12;
       return b;
     }
 
@@ -302,8 +306,8 @@
       list.appendChild(el('li', null, 'Name: ' + a.name));
       list.appendChild(el('li', null, 'Phone: ' + a.phone));
       list.appendChild(el('li', null, 'Job: ' + a.job));
-      addBot(['Here is what you typed:', list]);
-      addBot(['Demo only: nothing was sent.']);
+      // One bubble, so the note scrolls into view together with what it is about.
+      addBot(['Here is what you typed:', list, 'Demo only: nothing was sent.']);
       state.flow = null;
       state.step = 0;
       state.answers = {};
@@ -333,7 +337,7 @@
         }
       } else if (intent === 'location') {
         addBot([cfg.city
-          ? 'Serving ' + cfg.city + ', TX. Exact service area to confirm with the owner.'
+          ? 'Serving ' + cfg.city + ', ' + cfg.state + '. Exact service area to confirm with the owner.'
           : 'Service area to confirm with the owner.']);
       } else if (intent === 'hours') {
         addBot([hasPhone
@@ -387,9 +391,31 @@
       controls.forEach(function (c) { c.setAttribute('aria-expanded', value); });
     }
 
+    // While the panel is open the page behind it goes inert (no taps, no focus, hidden from screen
+    // readers). Two things stay live: the panel, and a docked bar on screen (the phone call bar), so
+    // its Call works in one tap. aria-modal is true only when nothing else stays live (no bar).
+    // Nodes the page had made inert itself are left alone.
+    var madeInert = [];
+    function setInert(on) {
+      madeInert.forEach(function (n) { n.removeAttribute('inert'); });
+      madeInert = [];
+      if (!on) { return; }
+      var keep = [panel].concat(openers.filter(onScreen).map(function (o) { return o.parentNode; }));
+      (function walk(node) {
+        Array.prototype.forEach.call(node.children, function (n) {
+          if (keep.indexOf(n) !== -1 || n.hasAttribute('inert')) { return; }
+          if (keep.some(function (k) { return n.contains(k); })) { walk(n); return; }
+          n.setAttribute('inert', '');
+          madeInert.push(n);
+        });
+      })(document.body);
+      panel.setAttribute('aria-modal', keep.length === 1 ? 'true' : 'false');
+    }
+
     function openPanel(from) {
       lastOpener = from || launcher;
       panel.hidden = false;
+      setInert(true);
       setExpanded('true');
       if (!state.greeted) {
         state.greeted = true;
@@ -405,6 +431,7 @@
 
     function closePanel(returnFocus) {
       panel.hidden = true;
+      setInert(false);
       setExpanded('false');
       if (returnFocus) {
         // back to the control that opened the panel; if it has left the screen, the first one still on it
@@ -420,6 +447,18 @@
     });
 
     closeBtn.addEventListener('click', function () { closePanel(true); });
+
+    // With the page inert, a tap outside the panel (the floating launcher too) lands on <body> or
+    // <html>: close the chat, so the button that opened it still works as a toggle. A tap on the live
+    // bar's other links (Call, Estimate) closes the chat and then does what it says, so the call
+    // starts, or the request form it scrolls to is live and not under the panel.
+    document.addEventListener('click', function (e) {
+      if (!isOpen()) { return; }
+      var t = e.target;
+      if (t === document.body || t === document.documentElement) { closePanel(true); return; }
+      var link = t.closest ? t.closest('a, button') : null;
+      if (link && controls.indexOf(link) === -1 && !panel.contains(link)) { closePanel(false); }
+    });
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && isOpen()) { closePanel(true); }

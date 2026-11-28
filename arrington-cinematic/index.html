@@ -274,7 +274,7 @@ html:not(.js) .static-hero{display:block;min-height:100vh}
 .hint{font-size:.88rem;color:var(--ink-2)}
 .field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:3px solid var(--accent);outline-offset:1px;box-shadow:0 0 0 7px var(--canvas)}
 .status{min-height:1.5em;margin-top:.9rem;font-weight:600}
-.privacy{margin-top:.8rem;font-size:.85rem;color:var(--ink-2)}
+.privacy{margin-top:.8rem;font-size:.85rem;color:var(--ink-2)}.consent{display:flex;gap:10px;align-items:flex-start;font-size:1rem;line-height:1.5;margin:.2rem 0 .6rem}.consent input{width:22px;height:22px;flex:none;margin:2px 0 0;accent-color:var(--acc,currentColor)}
 
 /* footer, call bar, environment */
 .foot{background:var(--deep);color:var(--text-secondary);padding:calc(3.5rem + var(--tab-h)) 0 3.5rem}
@@ -543,9 +543,10 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
       <div class="field"><label for="p">Phone</label><input id="p" name="p" type="tel" autocomplete="tel" required></div>
       <div class="field"><label for="k">What do you need?</label><select id="k" name="k"><option>Leak or repair</option><option>Full replacement</option><option>Storm damage check</option><option>Not sure yet</option></select></div>
       <div class="field"><label for="d">Details</label><span class="hint" id="d-hint">For example: a stain, a leak, a shingle in the yard.</span><textarea id="d" name="d" aria-describedby="d-hint"></textarea></div>
+      <label class="consent"><input type="checkbox" name="sms" value="yes"><span>Text me about this request. I agree to receive text messages from Arrington Roofing about my estimate. Msg &amp; data rates may apply. Reply STOP to opt out. Not required to get an estimate.</span></label>
       <button class="btn" type="submit">Send request</button>
       <p class="status" role="status" aria-live="polite"></p>
-      <p class="privacy"><strong>Privacy:</strong> This demo stores and sends nothing. On the live site, your name, phone and request would go only to Arrington Roofing, to answer you.</p>
+      <p class="privacy"><strong>Privacy:</strong> This demo stores and sends nothing. On the live site, your name, phone and request would go only to Arrington Roofing, to answer you. <a href="privacy.html">Privacy policy</a></p>
     </form>
   </div>
 </section>
@@ -554,7 +555,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 <footer class="foot">
   <div class="wrap">
     <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#2a3e4a"/><path d="M5 17 16 7l11 10" fill="none" stroke="#f2b558" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 20.5h14M9 25h14" stroke="#b9c6cc" stroke-width="2.2" stroke-linecap="round"/></svg><span>Arrington Roofing</span></a>
-    <p class="meta"><span>Dallas, TX</span><a href="tel:+14696219622">(469) 621-9622</a></p>
+    <p class="meta"><span>Dallas, TX</span><a href="tel:+14696219622">(469) 621-9622</a><a href="privacy.html">Privacy policy</a></p>
     <p class="disc">Concept demo, not affiliated with Arrington Roofing. Ratings as listed publicly in Nov 2026. Services, process and service area to confirm with the business. Hero footage is AI-generated.</p>
   </div>
 </footer>
